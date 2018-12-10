@@ -1,0 +1,80 @@
+.header-blue .navbar,.header-blue .navbar .navbar-nav a.active,.header-blue .navbar .navbar-nav>.show .dropdown-item{box-shadow:none;background:0 0}
+.header-blue{background:linear-gradient(135deg,#172a74,#21a9af);background-color:#184e8e;padding-bottom:80px;font-family:'Source Sans Pro',sans-serif}@media (min-width:768px){.header-blue{padding-bottom:120px}}
+.header-blue .navbar{padding-top:.75rem;padding-bottom:.75rem;color:#fff;border-radius:0;border:none}
+.header-blue .navbar .navbar-brand{font-weight:700;color:inherit}
+.header-blue .navbar .navbar-brand:hover{color:#f0f0f0}
+.header-blue .navbar .navbar-collapse{border-top:1px solid rgba(255,255,255,.3);margin-top:.5rem}@media (min-width:768px){.header-blue .navbar{padding-top:1rem;padding-bottom:1rem}
+.header-blue .navbar .navbar-collapse{border-color:transparent;margin:0}
+.header-blue .navbar-nav .nav-link{padding-left:.7rem;padding-right:.7rem}}
+.header-blue .navbar .navbar-collapse span .login{color:#d9d9d9;margin-right:.5rem;text-decoration:none}
+.header-blue .navbar .navbar-collapse span .login:hover{color:#fff}
+.header-blue .navbar .navbar-toggler{border-color:rgba(255,255,255,.3)}
+.header-blue .navbar .navbar-toggler:hover,.header-blue .navbar-toggler:focus{background:0 0}@media (min-width:992px){.header-blue .navbar-nav .nav-link{padding-left:1.2rem;padding-right:1.2rem}}
+.header-blue .navbar .navbar-nav>li>.dropdown-menu{margin-top:-5px;box-shadow:0 4px 8px rgba(0,0,0,.1);background-color:#fff;border-radius:2px}
+.header-blue .navbar .dropdown-menu .dropdown-item,.header-blue .navbar .dropdown-menu .dropdown-item:focus{line-height:2;color:#37434d}.header-blue .navbar .dropdown-menu .dropdown-item:focus,.header-blue .navbar .dropdown-menu .dropdown-item:hover{background:#ebeff1}
+.header-blue .action-button,.header-blue .action-button:not(.disabled):active{border:1px solid rgba(255,255,255,.7);border-radius:40px;color:#ebeff1;box-shadow:none;text-shadow:none;padding:.3rem .8rem;background:0 0;transition:background-color .25s;outline:0}
+.header-blue .action-button:hover{color:#fff}
+.header-blue .navbar .form-inline label{color:#d9d9d9}
+.header-blue .navbar .form-inline .search-field{display:inline-block;width:80%;background:0 0;border:none;border-bottom:1px solid transparent;border-radius:0;box-shadow:none;color:inherit;transition:border-bottom-color .3s}
+.header-blue .navbar .form-inline .search-field:focus{border-bottom:1px solid #ccc}
+.header-blue .hero{margin-top:20px;text-align:center}@media (min-width:768px){.header-blue .hero{margin-top:60px;text-align:left}}
+.header-blue .hero h1{color:#fff;font-size:40px;margin-top:0;margin-bottom:15px;font-weight:300;line-height:1.4}@media (min-width:992px){.header-blue .hero h1{margin-top:190px;margin-bottom:24px;line-height:1.2}}
+.header-blue .hero p{color:rgba(255,255,255,.8);font-size:20px;margin-bottom:30px;font-weight:300}
+.header-blue .phone-holder{text-align:right}
+.header-blue div.iphone-mockup{position:relative;max-width:300px;margin:20px;display:inline-block}
+.header-blue .iphone-mockup img.device{width:100%;height:auto}
+.header-blue .iphone-mockup .screen{position:absolute;width:88%;height:77%;top:12%;border-radius:2px;left:6%;border:1px solid #444;overflow:hidden;background:url(../../assets/img/screen-content-iphone-6.jpg) center;background-size:cover}
+.header-blue .iphone-mockup .screen:before{content:'';background-color:#fff;position:absolute;width:70%;height:140%;top:-12%;right:-60%;transform:rotate(-19deg);opacity:.2}
+.navbar-toggler:not(:disabled):not(.disabled){cursor:pointer}
+.simple-slider .swiper-slide{height:240px;background-repeat:no-repeat;background-size:cover;background-position:center}
+.simple-slider .swiper-button-next,.simple-slider .swiper-button-prev{width:50px;margin-left:20px;margin-right:20px}@media (max-width:767px){.simple-slider .swiper-button-next,.simple-slider .swiper-button-prev{display:block}
+.simple-slider .swiper-slide{height:328px}}
+.nav-link:focus,.nav-link:hover{text-decoration:none;border-color:red}@media (min-width:768px){.col-md-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:76.7%}.col-md-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}}
+.swiper-containers{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+.dropbtn {
+   background-color: #ffffff;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+	z-index: 1;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ffffff;
+border-bottom:5px solid red}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #ffffff;border-bottom:5px solid red}

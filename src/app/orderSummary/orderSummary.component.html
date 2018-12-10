@@ -1,0 +1,329 @@
+<head>
+    <link rel="stylesheet" href="../trolley/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>Pick n Pay</title>
+</head>
+<main data-currency-iso-code="ZAR">
+    <a href="#skip-to-content" class="skiptocontent" data-role="none">Skip to content</a>
+    <a href="#skiptonavigation" class="skiptonavigation" data-role="none">Skip to navigation menu</a>
+
+
+    <div class="container">
+    </div>
+    <div class="logo-for-print and other things">
+        <div class="col-xs-12 no-space yComponentWrapper">
+            <div class="simple-banner-component simple-banner introPageHeader">
+                <a href="/pnpstorefront/pnp/en/"><img title="Pick n Pay" alt="Pick n Pay" src="https://cdn-prd-02.pnp.co.za/sys-master/images/h42/hf7/8796170453022/onlineshopping_logo.png"></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <my-header></my-header>
+
+    <body>
+        <div class="container">
+            <!-- login modal starts -->
+
+            <div class="login-modal" style="display:none;">
+
+                <div class="login-image" style="background-image: url(https://cdn-prd-02.pnp.co.za/sys-master/images/h1b/h63/8921891962910/login-modal.jpg)"></div>
+
+                <div class="login-content">
+                    <h2>COULD YOU DO US A <br><span>FLAVOUR?</span></h2>
+                    <h4><b>LOG IN</b> or <b>SIGN UP</b> now to find out:</h4>
+                    <div class="login-list"><span>1</span> <h4>If we <b>DELIVER</b> to you</h4>
+                    </div>
+                    <div class="login-list"><span>2</span> <h4>If a particular <b>PRODUCT&nbsp;</b>is available in your area</h4>
+                    </div>
+                    <div class="login-list"><span>3</span> <h4>The <b>PRICE&nbsp;</b>(maybe it's on special in your area!)</h4>
+                    </div>
+                    <div class="login-modal-buttons">
+                        <a href="/openid_connect_login"><button type="button" class="btn-custom btn-custom-blue btn-login-modal-login">LOG
+                                IN
+                            </button></a>
+                        <a href="https://profile.pnp.co.za/#register?redirect_uri=https://beta.pnp.co.za/pnpstorefront"><button
+                                type="button" class="btn-custom btn-custom-pink btn-login-modal-signup">SIGN UP</button></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- login modal ends -->
+        </div><a id="skip-to-content"></a>
+
+        <div>
+            <div class="alert negative" id="noStoreSelected" style="display:none" tabindex="0">
+                Please select stores for the entries highlighted in red</div>
+            <div id="displayAmendMessage" style="display:none;">
+                The order you selected is no longer available to be amended.</div>
+
+            <button class="cart-back js-cart-back hidden-sm hidden-md hidden-lg"> &lt; Back</button>
+
+            <div>
+                <div class="container checkoutDeliveryContainer">
+
+                    <div class="col-xs-12 col-md-3 col-md-push-9">
+                        <div class="stickThis">
+                            <div class="row MobilefixedSideBar checkout-help-totals no-space" style="position: static; top: 132px; width: 280px;">
+                                <!-- Verified that there's a pre-existing bug regarding the setting of showTax; created issue  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="cart-totals col-xs-12 col-sm-6 col-md-12 no-space ">
+
+                                    <div class="mini-cart js-mini-cart" name="cartTotal">
+                                        <div id="miniCartTotals" class="mini-cart-totals">
+                                            <div name="cartTotals-subtotal">
+                                                Trolley Total
+                                                <span>R{{total.toFixed(2)}}</span>
+                                            </div>
+                                            <div name="cartTotals-saving" class="cartTotals-saving cart-saving saving-text-grey">
+                                                Promotional Savings
+                                                <span>
+                                                    -R{{pro.toFixed(2)}}</span>
+                                            </div>
+                                            <div name="cartTotals-delivery" class="">
+
+
+                                                Delivery Fee
+
+
+
+                                                <span>
+                                                    +R{{delivery.toFixed(2)}}
+
+                                                </span>
+                                            </div>
+                                            <div name="cartTotals-cashOffValue" class="cart-saving saving-text-grey">
+                                                Cash Off Voucher
+                                                <span>
+                                                    R0<span>00</span></span>
+                                            </div>
+
+                                            <div name="cartTotals-totalPrice" class="cartTotals-totalPrice" data-total-price-value="366.94">
+                                                Total
+                                                <span>R{{(total-pro+delivery).toFixed(2)}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="cartMessage">
+                                        <strong>Note:</strong> your total is a guide price &amp; may vary slightly upon invoicing
+                                        due to variable weight items, adding bags, and/or substitute items.
+                                    </div>
+
+
+                                </div>
+                                <div class="cart-voucher col-xs-12 col-sm-6 col-md-12">
+                                    <div class="voucherHeadingsTop"><strong><span>APPLY A PROMO CODE</span></strong></div>
+                                    <div name="voucherItems"><input type="hidden" name="appliedVoucherCode" value="">
+                                        <div name="showVoucherEnter" class="freeDelVoucher">
+                                            <div class="freeDelVoucherInner">
+
+                                                <div class="js-voucher-error-message-container stock-message-container freeDelVoucher-errorOverlay" style="display:none;">
+                                                    <div class="js-voucher-error-message-text">
+                                                    </div>
+                                                    <button type="button" class="btn btn-default btn-default-yellow btn-fullwidth remove-item js-close-voucher-error-message-button">
+                                                        OK</button>
+                                                </div>
+                                                <div class="voucherInputContainer container no-space" style="display:block;">
+                                                    <div class="col-xs-8 no-space">
+                                                        <div class="voucherInput">
+                                                            <input type="text" name="voucherCode">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4 no-space">
+                                                        <a href="#" class="btn btn-default btn-default-pink btn-fullwidth js-redeem-voucher" data-url="/pnpstorefront/pnp/en/cart/redeemVoucher/"><strong>APPLY</strong></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="voucherData">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="voucherHeadingsBottom"><span>A maximum of one free delivery voucher &amp;
+                                            one cash off voucher may be applied</span></div>
+                                </div>
+
+
+                                <div id="forgotVoucher" hidden="true">
+                                    <div class="forgotVoucher-modalInner">
+                                        <input type="hidden" name="appliedVoucherCode" value="">
+                                        <div class="forgotVoucher-modalInnerContent">
+                                            <p><span>DON'T MISS OUT!</span> IT LOOKS LIKE YOU FORGOT TO APPLY YOUR VOUCHER
+                                                CODE.
+                                            </p>
+                                            <a id="applyVoucherPopup" href="#" class="btn btn-secondary-whiteout js-redeem-voucher" data-url="/pnpstorefront/pnp/en/cart/redeemVoucher/">
+                                                APPLY VOUCHER CODE</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-xs-12 no-space">
+                                        <div class="actions">
+                                            <div class="CartCheckoutSideActionComponent-CartCheckoutSideAction" data-index="1">
+                                                <button type="submit" class="btn btn-default btn-fullwidth btn-custom-green-checkout">
+                                                    CHECKOUT</button>
+                                                <div>
+                                                    <input type="hidden" name="CSRFToken" value="c5bb594f-8f5f-4327-acd6-4a74f77c6707">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 no-space" id="accountSummaryContainer_AccountSummary" name="accountSummaryContainer" data-component-uid="AccountSummary"
+                                    data-url="/pnpstorefront/pnp/en/account/accountSummary/"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-9 col-md-pull-3">
+
+
+
+                        <div class="lst">
+
+                            <span id="afterOne" style="background-color: #05b305;color:#FFF;">&#x2714;</span>
+                            <p id="one" style="border-color: #2c9e05"> View Trolley </p>
+                   
+                            <span id="afterTwo" style="background-color: #05b305;color:#FFF;">&#x2714;</span>
+                            <p id="two" style="border-color: #2c9e05"> Delivery details </p>
+                            <span>3</span>
+                            <p id="three" style="border-color: #3ad006"> Order summary </p>
+                            <span>4</span>
+                            <p id="four"> Payment </p>
+                        </div>
+
+
+                        <div style="display:none" class="content">
+                            <div class="listPageHeader my-full-trolley no-border">
+                                <h1><span class="navcart-icon"></span><span><b>my</b></span> trolley</h1>
+                            </div>
+                        </div>
+                        <div id="cartItemsPanel">
+                            <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+                            <input type="hidden" name="cartpageTotalItems" value="2">
+                            <!-- START SUBSTITUTES -->
+
+                            <!-- END SUBSTITUTES -->
+
+
+
+                            <!-- START PRODUCTLIST -->
+
+
+
+
+
+                            <!-- END PRODUCTLIST -->
+
+
+                        </div>
+
+                        <div id="accountvoucherlistcomponent" class="accountvoucherlistcomponent accountVoucherList-landscape">
+
+                            <div>
+                            </div>
+                            <div class="voucherBannerBtnContainer">
+                            </div>
+                            <div class="emptyVouchersDisplayMessage">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 no-space">
+                                <div class="actions">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orderSummary-type-del">
+                            <div class="listPageHeader no-border hasAmendMode">
+                                <h1>MY ORDER SUMMARY</h1>
+                            </div>
+                            <div class="listPageHeader listPageHeaderColor" id="orderSummary-DelDetails-header">
+                                <h1><span class="navcart-icon navcart-deli-icon"></span>DELIVERY DETAILS</h1>
+                            </div>
+                            <div class="listPageHeaderBody" id="orderSummary-DelDetails-details">
+                                <div  class="orderSummary-DelDetails col-xs-12 col-sm-7 col-md-6 hidden-xs">
+                                    <span>Delivery Address:</span>
+                                    <b>:</b>{{order.address}}  {{order.apartment}}</div>
+                            
+
+                                <div class="orderSummary-DelDetails deli-move-left col-xs-12 col-sm-5 col-md-6 hidden-xs">
+                                    <span>Delivery Time:</span>
+                                    <b>{{order.date}}</b>
+                                </div>
+                                <div class="orderSummary-DelDetails col-xs-12 col-sm-6 hidden-sm hidden-md hidden-lg">
+                                    <span>Delivery Time:</span>
+                                    <b>{{order.date}}<br>between 10:00 - 11:00</b>
+                                </div>
+                            </div>
+
+                            
+
+                           
+
+                        </div>
+
+
+                        
+
+
+                        <div class="addressLine-btn col-xs-12">
+                            <button id="addressFormAdd" routerLink="/my-payment" type="button" class="btn btn-default btn-fullwidth btn-custom-green-checkout">
+                                CHECKOUT</button>
+                            <button id="addressFormUpdate" type="button" class="btn btn-default btn-default-pink col-xs-12 col-md-4 col-lg-4" style="display: none">
+                                UPDATE ADDRESS</button>
+                            <div class="formMandatory">
+                                <span class="errorMandatoryFieldsEmpty" hidden="">*Please complete the highlighted fields</span>
+                            </div>
+                            <div class="errorClass addressErrorMsg" id="errorMsg">
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </body>
+</main>
+<my-footer></my-footer>

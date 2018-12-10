@@ -1,0 +1,285 @@
+<link rel="stylesheet" href="../../recipes/style.css">
+
+<my-header></my-header>
+<div class="login-modal" *ngIf="message" id="login-modal">
+
+        <div class="login-image" style="background-image: url(https://cdn-prd-02.pnp.co.za/sys-master/images/h1b/h63/8921891962910/login-modal.jpg)"></div>
+
+        <div class="login-content">
+          <a (click)='close()' title="Close" class="close">X</a>
+          <h2>COULD YOU DO US A <br><span>FLAVOUR?</span></h2>
+          <h4><b>LOG IN</b> or <b>SIGN UP</b> now to find out:</h4>
+          <div class="login-list"><span>1</span> <h4>If we <b>DELIVER</b> to you</h4>
+          </div>
+          <div class="login-list"><span>2</span> <h4>If a particular <b>PRODUCT&nbsp;</b>is available in your area</h4>
+          </div>
+          <div class="login-list"><span>3</span> <h4>The <b>PRICE&nbsp;</b>(maybe it's on special in your area!)</h4>
+          </div>
+          <div class="login-modal-buttons">
+            <a routerLink="/my-login"><button type="button" class="btn-custom btn-custom-blue btn-login-modal-login">LOG
+                IN
+              </button></a>
+            <a routerLink="/my-signin"><button type="button" class="btn-custom btn-custom-pink btn-login-modal-signup">SIGN
+                UP
+              </button></a>
+
+          </div>
+        </div>
+
+      </div>
+<div class="no-space">
+    <div class="row">
+        <div class="col-xs-12 no-space">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 no-space">
+
+        </div>
+    </div>
+    <div class="container no-space">
+        <div class="col-xs-12 col-md-3 col-md-push-9 stickThis">
+            <div class="">
+                <div class="mock-loyalty-link">
+                    <a href="http://www.picknpay.co.za/smartshopper-overview " target="_blank&quot;&quot;"><span>Smart</span>
+                        Shopper</a>
+                </div>
+            </div>
+            <div class="">
+                <div class="iframecomponent">
+
+                    <!-- Each iframecomponent iframe on the page requires a unique ID or they're all assigned the value returned by the last to be processed. -->
+                    <script type="text/javascript">
+                        var PnPIframeResizer = PnPIframeResizer || {};
+                        PnPIframeResizer.IframeCount === undefined ? PnPIframeResizer.IframeCount = 1 : PnPIframeResizer.IframeCount++;
+                        document.write('<iframe id="PnPIframe' + PnPIframeResizer.IframeCount + '" height="100%" width="265px" scrolling="no" src="https://resolve.pnp.co.za/Address/InAreaWidgetNew.htm" frameborder="0"><p>Your browser does not support iframes.</p></iframe>')
+                    </script><iframe id="PnPIframe1" height="100%" width="265px" scrolling="no" src="https://resolve.pnp.co.za/Address/InAreaWidgetNew.htm"
+                        frameborder="0" style="overflow: hidden; height: 281px;"><p>Your browser does not support iframes.</p></iframe>
+
+                    <script src="/pnpstorefront/_ui/shared/js/iframeResizer.min.js" type="text/javascript">
+                    </script>
+                    <script type="text/javascript">
+                        iFrameResize({
+                            log: true,
+                            enablePublicMethods: true,
+                            resizeFrom: "child",
+                            checkOrigin: false
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-9 col-md-pull-3 CMS-campaignPage">
+            <div class="">
+                <a href="">
+                    <img title="Bread-&amp;-Butter-Pudding-header.jpg" src="{{recipe.banner}}" alt="Bread-&amp;-Butter-Pudding-header.jpg" class="img-responsive"
+                        style="margin-top: 152px;">
+                    <span class=""></span>
+                </a>
+            </div>
+            <div class="ONE_PLUS_ONE">
+                <div class="node-1 xup-type-CMSParagraphComponent no-wrap">
+                    <div class="content" style="font-size: 19px;">
+                        <p><strong>Main Ingredients</strong></p>
+                        <ul>
+                            {{recipe.ingredients}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="node-2 xup-type-CMSParagraphComponent no-wrap">
+                    <div class="content">
+                        <p><b>Method</b></p>
+                        <ol>
+                            <li>
+                                <p><strong>Preheat </strong>oven to 160°C</p>
+                            </li>
+                            <li>
+                                <p><strong>Slice </strong>raisin loaf, then <strong>butter </strong>and <strong>quarter </strong>slices</p>
+                            </li>
+                            <li>
+                                <p><strong>Layer </strong>raisin bread into a medium-sized ovenproof dish or 4-6 smaller
+                                    dishes for individual portions</p>
+                            </li>
+                            <li>
+                                <p><strong>Mix </strong>custard ingredients together and <strong>pour </strong>over raisin
+                                    bread
+                                </p>
+                            </li>
+                            <li>
+                                <p><strong>Bake </strong>for about 35-40 minutes for larger puddings or 25-30 minutes for
+                                    smaller ones</p>
+                            </li>
+                            <li>
+                                <p><strong>Dust </strong>with icing sugar and <strong>serve</strong></p>
+                            </li>
+                        </ol>
+                        <p><strong>More ideas</strong></p>
+                        <ol>
+                            <li>
+                                <p><strong>Serve </strong>with custard, cream or icing sugar</p>
+                            </li>
+                            <li>
+                                <p><strong>Cut costs</strong> by using stale sliced bread or buns in place of raisin bread,
+                                    and margarine in place of butter</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="content">
+                    <div class="mainSectionTitle"><span class="pnpFontMedium">NEED</span> INGREDIENTS?</div>
+                </div>
+            </div>
+            <div class="carousel-component fed-prodref-carousel small-chevron ">
+                <!--<div class="headline"></div>-->
+                <div class="carousel js-owl-carousel js-owl-lazy-product-reference js-owl-carousel-reference owl-carousel owl-theme owl-loaded">
+
+
+
+
+                    <div class="owl-stage-outer" *ngFor="let pro of product;let i=index">
+                        <div class="owl-stage" style=" transition: all 0s ease 0s;">
+
+
+
+
+
+
+
+
+                            <div class="owl-item cloned" style="width: 269.667px; margin-right: 10px;">
+                                <div class="productCarouselItem js-product-carousel-item">
+
+                                    <div class="productCarouselItem-overlay addToCartError_000000000000118676_EA" id="addToCartError_000000000000118676_EA" style="display: none">
+                                        <div class="productCarouselItem-overlay-close" onclick="getElementById('addToCartError_000000000000118676_EA').style.display='none'">X</div>
+                                        <span class="addToCartErrorMsg_000000000000118676_EA" id="addToCartErrorMsg_000000000000118676_EA"></span>
+                                    </div>
+
+                                    <div *ngIf="pro.save" class="image-gallery-savingsbuttonContainer">
+                                        <div class="image-gallery-savingsbutton js-savings-amount-off">
+                                            Save
+                                            <div>
+                                                R{{pro.save}}</div>
+                                        </div>
+                                        <div class="image-gallery-savingsbutton savingsbuttonPoints">
+                                            Get
+                                            <div>Triple</div>Points
+                                        </div>
+                                    </div>
+
+                                    <div class="item js-product-card-item">
+                                        <a (click)="getProduct(pro.productId)">
+                                             <div class="thumb">
+                                                <img src="{{pro.image}}">
+                                            </div>
+                                            <div class="item-name">{{pro.productName}}</div>
+                                            <div class="product-price" style="height: 45px;">
+                                                    <div class="item-price">
+                                                            <div class="currentPrice  hasSavings">R {{pro.newPrice.toFixed(2)}}
+                                                            </div>
+                                                            <div *ngIf="pro.save" class="oldPrice">R{{pro.originPrice.toFixed(2)}}</div>
+                                                          </div>
+                                            </div>
+                                        </a>
+                                        <div class="addtocart-component">
+
+                                                <div class="qty-selector input-group js-qty-selector">
+                                                        <span class="input-group-btn">
+                                                          <button class="btn btn-primary js-qty-selector-minus" (click)="SubQty(pro)" type="button"><span
+                                                              class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                                        </span>
+                                                        <input type="text" maxlength="3" class="form-control js-qty-selector-input" size="1" value="{{pro.quantity}}" data-max="999"
+                                                          data-min="1" name="pdpAddtoCartInput" title="Quantity">
+                                                        <span class="input-group-btn">
+                                                          <button class="btn btn-primary js-qty-selector-plus" (click)="AddQty(pro)" type="button"><span
+                                                              class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                                        </span>
+                                                      </div>
+                                            <div class="actions">
+                                                <div class="ProductCarouselAddToCart-AddToCartAction" data-index="1">
+                                                    <div id="addToCartTitle" style="display:none">Added to Your Shopping
+                                                        Cart
+                                                    </div>
+                                                    <form id="addToCartForm" class="add_to_cart_form" action="/pnpstorefront/pnp/en/cart/add" method="post"><input
+                                                            type="hidden" maxlength="3" size="1" id="qty" name="qty" class="qty js-qty-selector-input"
+                                                            value="1">
+                                                        <input type="hidden" size="1" id="unitCode" name="unitCode" class="unit-code js-unit-selector-input">
+                                                        <input type="hidden" name="productCodePost" value="000000000000118676_EA">
+                                                        <input type="hidden" name="quantityInCart_000000000000118676_EA" value="0">
+                                                        <input type="hidden" name="unitCodeInCart_000000000000118676_EA" value="">
+
+                                                        <div class="addToCartButtonContainer container-fluid no-space" data-pdt-code="000000000000118676_EA">
+
+                                                                <div id="prodtile-addToCartButton-container_000000000000134968_EA" class="prodtile-addToCartButton-container notAdded addToCartButton_000000000000134968_EA ">
+                                                                        <button  id="addToCartButton" (click)="addToCart(pro,i)" name="addToCartButton_000000000000134968_EA" type="submit" class="hasSpin btn btn-default btn-default-productview js-enable-btn">
+                                                                          <span class="addbuttontextLong centertileBtnWording">Add to trolley</span>
+                                                                          <span class="addbuttontextShort centertileBtnWording">Add</span>
+                                                                        </button>
+                                                                      </div>
+
+                                                            <div id="addedToCartDiv_000000000000118676_EA" class="prodtile-addedToCart addedToCartDiv_000000000000118676_EA col-xs-5"
+                                                                style=" display:none  ">
+                                                                <div class="prodtile-addedToCartInner">
+                                                                    <div class="prodtile-addedToCartInner-qty lblQuantityInCart_000000000000118676_EA" id="lblQuantityInCart_000000000000118676_EA">0</div>
+                                                                    <button id="removeFromCartButton_000000000000118676_EA" type="button" class="btn btn-primary btn-primary-blue js-enable-btn js-cart-item-remove removeFromCartButton_000000000000118676_EA"
+                                                                        data-remove-cart-product-url="/pnpstorefront/pnp/en/cart/product/000000000000118676_EA/remove"
+                                                                        data-product-code="000000000000118676_EA">
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="addToCartError-pdp addToCartError_000000000000118676_EA" id="addToCartError_000000000000118676_EA" style="display: none">
+                                                                <a class="glyphicon glyphicon-remove pdp-cart-notification-remove" href="#"></a>
+                                                                <span id="addToCartErrorMsg_000000000000118676_EA" class="addToCartErrorMsg_000000000000118676_EA"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <input type="hidden" name="CSRFToken" value="84dd2ec9-9aa2-4f6e-a624-d2f46bb9c5f2">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="list-actions">
+                                                <div class="rating js-ratingCalc " data-rating="{&quot;rating&quot;:&quot;&quot;,&quot;total&quot;:5}">
+                                                    <div class="rating-stars">
+                                                        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
+                                                            class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
+                                                            class="glyphicon glyphicon-star"></span>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="ProductCarouselAddToCart-CarouselAddToShoppingListAction" data-index="1">
+                                                    <a href="javascript:" class="glyphicon glyphicon page-check" onclick="ACC.shoppinglist.addProductToShoppingListPopup(this);"
+                                                        data-pg="plp"></a>
+
+                                                    <div class="overlay-sl"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="prodFavourite">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-controls">
+                        <div class="owl-nav">
+                            <div class="owl-prev" style="display: none;"><span class="glyphicon small-chevron icon-chevron-small-left"></span></div>
+                            <div class="owl-next" style="display: none;"><span class="glyphicon small-chevron icon-chevron-small-right"></span></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</div>
+<my-footer></my-footer>

@@ -1,0 +1,339 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 12px;
+    color: #003768;
+    font-family: "CachetStd-Book", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-x: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.headerLogo {
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #FFFFFF;
+    min-height: 60px;
+}
+
+.headerLogo img {
+    max-width: 157px;
+    max-height: 44px;
+    width: 100%;
+    height: 100%;
+    margin-left: 11%;
+    margin-top: 14px !important;
+}
+
+.wrapper {
+    background-color: #FFFFFF;
+    -khtml-opacity: .50;
+    -moz-opacity: .50;
+    filter: alpha(opacity=50);
+    filter: progid: DXImageTransform.Microsoft.Alpha(opacity=0.5);
+    opacity: 0.93;
+    position: relative;
+    margin: auto;
+    width: 80%;
+    height: 600px;
+    text-align: center;
+    top: 4%;
+}
+
+.formContent {
+    padding: 10px;
+    margin-top: 4%;
+    margin: auto;
+    float: right;
+    width: 100%;
+}
+
+.h1,
+.h2 {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.h1 {
+    font-size: 32px;
+    font-family: 'CachetStd-Medium';
+    color: #a9a9a9;
+    position: relative;
+    top: 7%;
+    margin-bottom: 5%;
+}
+
+.h2 {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "CachetStd-Book";
+    margin-top: 5%;
+}
+
+.formBlock {
+    margin: auto;
+}
+
+.h2 ul {
+    list-style-position: outside;
+    list-style-type: none;
+    color: grey;
+}
+
+table.formBlock {
+    border: none;
+    border-color: #FFF;
+    border-spacing: 0;
+}
+
+.formBlock td {
+    padding: 0 0 5px 0;
+    height: 100%;
+    position: relative;
+}
+
+.btnContainer {
+    font-family: "CachetStd-Book";
+    max-width: 300px;
+    margin: auto;
+}
+
+.forgotpassword {
+    margin-top: 2%;
+}
+
+.loginFootBorder {
+    display: none;
+    margin: 40px auto 5px auto;
+    border-top: 1px solid #ebebeb;
+    width: 900px;
+}
+
+.loginFoot {
+    background-color: #FFFFFF;
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    height: 50px;
+    left: 0;
+    bottom: 0%;
+}
+
+.loginFoot a {
+    color: white;
+}
+
+.loginFoot .h3 {
+    color: #0181a8;
+    font-size: 15px;
+}
+
+.heading_list {
+    /*list-style: none;*/
+    font-family: pnpFontBook, Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 13px;
+    color: #0B3C5F;
+    margin-left: 30%;
+}
+
+
+/*--- radio & checkbox ---*/
+
+.formBlock label {
+    background-color: #FFFFFF;
+    color: grey;
+    height: 30px;
+    padding: 6px 10px 6px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    float: left;
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: none;
+    text-align: left;
+    -moz-border-radius: 7px 0 0 7px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ebebeb;
+}
+
+.formBlock input {
+    background-color: #FFFFFF;
+    color: #767676;
+    height: 30px;
+    padding: 6px 10px 6px 10px;
+    font-size: 12px;
+    float: left;
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: none;
+    text-align: left;
+    -moz-border-radius: 0 7px 7px 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #ebebeb;
+    border-left: none;
+}
+
+button {
+    background-color: #0F3356;
+    color: #ffffff;
+    font-family: arial;
+    font-size: 14px;
+    cursor: pointer;
+    width: 20%;
+    height: 41px;
+    border: none;
+    font-family: "CachetStd-Medium";
+    text-transform: uppercase;
+}
+
+button:hover {
+    opacity: 1;
+    /*background: -webkit-linear-gradient(to bottom, #0061a7 5%, #00487c 100%);
+    background: -o-linear-gradient(to bottom, #0061a7 5%, #00487c 100%);
+    background: -moz-linear-gradient(to bottom, #0061a7 5%, #00487c 100%);
+    background: linear-gradient(to bottom, #0061a7 5%, #00487c 100%);
+    background-color: #0061a7;*/
+}
+
+a,
+a:hover {
+    opacity: 1;
+    color: #004579;
+    text-decoration: underline;
+}
+
+a#btnResendOtp {
+    display: block;
+    margin-top: 20px;
+}
+
+button:focus,
+span:focus,
+div:focus,
+input:focus {
+    outline: 0 !important;
+}
+
+warningMessage {
+    color: #df8505;
+}
+
+.errorMessage {
+    color: #d46464;
+}
+
+.errorMessage span {
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+table.centeredTable {
+    margin: 20px auto 0 auto;
+}
+
+td.radiocontainer {
+    text-align: left;
+    height: 24px;
+    padding: 0px 10px 10px 0px;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    background-color: #FFF !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input[type="password"] {
+    background-color: #FFF !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    vertical-align: middle;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:before,
+input[type="radio"]:before {
+    content: "";
+    display: inline-block;
+    height: 24px;
+    margin: -7px 6px 0px 0px;
+    vertical-align: middle;
+    width: 24px;
+}
+
+input[type="checkbox"]:before {
+    background: url(../images/checkboxRadioButtonStates.png) 0px 0px no-repeat;
+}
+
+input[type="checkbox"]:checked:before {
+    background: url(../images/checkboxRadioButtonStates.png) -24px 0px no-repeat;
+}
+
+input[type="radio"]:before {
+    background: url(../images/checkboxRadioButtonStates.png) 0px -24px no-repeat;
+}
+
+input[type="radio"]:checked:before {
+    background: url(../images/checkboxRadioButtonStates.png) -24px -24px no-repeat;
+}
+
+label {
+    color: #767676;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+#loginButton:hover {
+    /*opacity: 1;*/
+}
+
+#signUpButton {
+    width: 49%; 
+    background-color: #991F41;
+   margin:auto;
+    /*opacity: 0.9;*/
+}
+
+#loginButton:hover {
+    /*opacity: 1;*/
+}
+#loginButton {
+    width: 49%;
+    float: right;
+margin:auto;
+   
+    /*opacity: 0.9;*/
+}

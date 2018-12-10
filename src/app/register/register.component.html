@@ -1,0 +1,106 @@
+<script>
+    function validateForm(){
+        var id = document.getElementById("id").value;
+
+        if( id = "" )
+        {
+            document.getElementById("errorID").innerHTML ="Error ID" ; 
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+<link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="headerLogo">
+                        <a routerLink="/my-menu" routerLinkActive="active">
+                            <img src="app/menu/img/LogoPnP.png" alt="Pick n Pay">
+                        </a>
+                    </div>
+<form [formGroup]="registerForm"  enctype="multipart/form-data" >
+        <h1> {{ data }} </h1>
+        <h1> {{ myMessage }} </h1>
+<p>Id:<input formControlName="id" id="id"> <span id="errorID"></span> </p>
+<p>Name:<input formControlName="name"></p>
+
+<div class="ng-invalid.ng-dirty" >
+    
+<p>Surname:<input formControlName="surname"  required>
+    <label id="error" *ngIf="registerForm.controls.surname.touched && registerForm.controls.surname.invalid ">Enter your surname</label>
+
+</p>
+</div>
+<fieldset formGroupName="login">
+<div class="ng-invalid.ng-dirty" >
+<p>Email:<input type="email" formControlName="email">
+<label id="error" *ngIf="registerForm.get('login.email').touched && registerForm.get('login.email').invalid ">Enter your surname</label>
+<label id="error" *ngIf="email">{{email}}</label>
+
+</p>
+</div>
+<div class="ng-invalid.ng-dirty" >
+<p>Password:<input type="password" id="passoword" formControlName="password">
+    
+    
+</p>
+</div>
+<div class="ng-invalid.ng-dirty" >
+    <p>Password:<input type="password" id="comfirmPassword" onchange="checkPasswordMatch()">
+        <label id="CheckPassword"></label>
+        
+    </p>
+    </div>
+<p>Role:<input formControlName="role"></p>
+</fieldset>
+<fieldset formGroupName="address">
+<div class="ng-invalid.ng-dirty" >
+    <p>CellNumber:<input type="text" formControlName="cellNumber">
+        <label id="error" >Enter your surname</label>
+        
+    </p>
+    </div>
+    <div class="ng-invalid.ng-dirty" >
+        <p>City:<input type="text" formControlName="city">
+            <label id="error">Enter your surname</label>
+            
+        </p>
+        </div>
+        <div class="ng-invalid.ng-dirty" >
+            <p>StreetAddress:<input type="text" formControlName="streetAddress">
+                <label id="error" >Enter your surname</label>
+                
+            </p>
+            </div>
+            <div class="ng-invalid.ng-dirty" >
+                <p>Suburb:<input type="text" formControlName="suburb">
+                    <label id="error" >Enter your surname</label>
+                    
+                </p>
+                </div>
+                <div class="ng-invalid.ng-dirty" >
+                    <p>Province:<input type="text" formControlName="province">
+                        <label id="error" >Enter your surname</label>
+                        
+                    </p>
+                    </div>
+                </fieldset>
+
+<p>Image:<input type="File" (change)="onFile($event)" formControlName="image" ></p>
+<button id="register" (click)="createUser();" onclick="checkPasswordMatch();" >Register</button>
+<button (click)="update()">Update</button>
+<button (click)="getById()">Retrieve</button>
+<button (click)="delete()">Delete</button>
+<h1>  </h1>
+<table>
+        <tr><th> Id</th><th>Email</th><th>Name</th><th>Role</th><th>Surname</th><th>Image</th></tr>
+        <tr *ngFor="let user of productList" >
+              <td>{{user.id}}</td> <td>{{user.email}}</td> <td>{{user.name}}</td><td>{{user.role}}</td><td>{{user.surname}}</td><td><img src="{{user.image}}" width="50px" height="50px"></td>
+              <td><button type="button" (click)="loadArticleToEdit(article.id)">Edit</button> </td> 
+              <td><button type="button" (click)="deleteArticle(article.id)">Delete</button></td>
+        </tr>
+      </table> 
+
+</form>
