@@ -1,0 +1,20 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+.input.ng-invalid.ng-dirty{
+  background-color: red;
+}
+#reg.ng-invalid.ng-dirty{
+  border-color:red;
+color: red;
+}
+label#error{
+  color: red;
+}
+#reg.ng-valid{
+
+  border-color: rgb(0, 255, 55) ;
+color: rgb(0, 255, 64);
+}

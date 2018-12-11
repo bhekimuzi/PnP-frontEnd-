@@ -1,0 +1,76 @@
+
+        <html class="cufon-active cufon-ready">
+            <head>
+                <link rel="stylesheet" href="style.css">
+                    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        
+                    <title>Login</title>
+                  
+                    <!-- Cufon -->
+                    
+                </head>
+        
+                <body>
+        
+                    
+        
+                    <div class="headerLogo">
+                        <a routerLink="/my-menu" routerLinkActive="active">
+                            <img src="app/menu/img/LogoPnP.png" alt="Pick n Pay" >
+                        </a>
+                    </div>
+        
+                    <!--Login functionality-->
+                    <div class="wrapper" id="loginView">
+                        <div class="h1 cachetBold"><canvas width="170" height="34" style="width: 170px; height: 34px; top: 0px; left: -2px;"></canvas>Welcome To Pick n Pay Online<canvas width="99" height="34" style="width: 99px; height: 34px; top: 0px; left: -2px;"></canvas><canvas width="55" height="34" style="width: 55px; height: 34px; top: 0px; left: -2px;"></canvas><canvas width="92" height="34" style="width: 92px; height: 34px; top: 0px; left: -2px;"></canvas></div>
+                        <div>
+                            <div class="formContent">
+                                <form  [formGroup]="loginForm">
+                                    <table class="formBlock">
+                                        <tbody><tr>
+                                            <td width="160"><label for="j_username">Email/username</label></td>
+                                            <td width="350"><input type="text" autocorrect="off" autocapitalize="off" spellcheck="false" formControlName="email"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="j_password">Password</label></td>
+                                            <td><input type="password" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" formControlName="password"></td>
+                                                 
+                                        </tr>
+                                        <tr>
+                                                <td><div class="dijitTooltipContainer dijitTooltipContents"  *ngIf="message" style="color:red;"  data-dojo-attach-point="containerNode" role="alert" align="left"><div style="width: 320px; white-space: normal" class="validationPrompting">You have entered an invalid username or password</div></div></td>
+                                              
+                                        </tr>
+
+                                    </tbody></table>
+                                    <div class="warningMessage" id="capsIndicator"><br></div>
+                                    <div class="errorMessage" id="formErrorMessage"></div>
+                                    <div class="btnContainer">
+                                        <button type="submit" name="submit" (click)="login()" id="loginButton">Log in</button>
+                                    </div>
+                                </form>
+                                <div class="btnContainer">
+                                    <a routerLink="/my-signin" style="color:#FFFFFF;text-decoration:none;">
+                                        <button name="" id="signUpButton">Sign Up</button>
+                                    </a>
+                                </div>
+                                <div class="forgotpassword">
+                                    <p style="
+                                        color: #575757;
+                                        font-size: 10px;
+                                        font-family: CachetStd-Book;">
+                                        <b style="font-family: CachetStd-Medium;">Tip</b>: Ever registered on our website or app?<br> If so, simply use your same login details here.<br><b style="font-family: CachetStd-Medium;
+                                    "></b>Easy peasy!</p>
+                                    <a href="https://profile.pnp.co.za/forgotpassword">Forgot your password?</a>
+                                </div>
+                            </div>
+                            <br>
+        
+                            <div class="loginFootBorder"></div>
+                            <div class="loginFoot" style="display:none;">
+                            </div>
+        
+                        </div>
+                
+        
+                </div></body></html>

@@ -1,0 +1,1125 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../product/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>Pick n Pay</title>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NT8JLD" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript><div class="branding-mobile hidden-md hidden-lg">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 js-mobile-logo"></div>
+      </div>
+    </div>
+  </div>
+  <main data-currency-iso-code="ZAR">
+    <a href="#skip-to-content" class="skiptocontent" data-role="none">Skip to content</a>
+    <a href="#skiptonavigation" class="skiptonavigation" data-role="none">Skip to navigation menu</a>
+
+
+    <div class="container">
+    </div>
+    <div class="logo-for-print and other things">
+      <div class="col-xs-12 no-space yComponentWrapper">
+        <div class="simple-banner-component simple-banner introPageHeader">
+          <a href="/pnpstorefront/pnp/en/"><img title="Pick n Pay" alt="Pick n Pay" src="https://cdn-prd-02.pnp.co.za/sys-master/images/h42/hf7/8796170453022/onlineshopping_logo.png"></a>
+        </div>
+      </div>
+    </div>
+
+    <my-header></my-header>
+    <div class="container">
+
+      <!-- login modal starts -->
+
+      <div class="login-modal" *ngIf="message" id="login-modal">
+
+        <div class="login-image" style="background-image: url(https://cdn-prd-02.pnp.co.za/sys-master/images/h1b/h63/8921891962910/login-modal.jpg)"></div>
+
+        <div class="login-content">
+          <a (click)='close()' title="Close" class="close">X</a>
+          <h2>COULD YOU DO US A <br><span>FLAVOUR?</span></h2>
+          <h4><b>LOG IN</b> or <b>SIGN UP</b> now to find out:</h4>
+          <div class="login-list"><span>1</span> <h4>If we <b>DELIVER</b> to you</h4>
+          </div>
+          <div class="login-list"><span>2</span> <h4>If a particular <b>PRODUCT&nbsp;</b>is available in your area</h4>
+          </div>
+          <div class="login-list"><span>3</span> <h4>The <b>PRICE&nbsp;</b>(maybe it's on special in your area!)</h4>
+          </div>
+          <div class="login-modal-buttons">
+            <a routerLink="/my-login"><button type="button" class="btn-custom btn-custom-blue btn-login-modal-login">LOG
+                IN
+              </button></a>
+            <a routerLink="/my-signin"><button type="button" class="btn-custom btn-custom-pink btn-login-modal-signup">SIGN
+                UP
+              </button></a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <a id="skip-to-content"></a>
+
+      <div>
+        <div class="row">
+          <div class="col-xs-12 no-space">
+          </div>
+        </div>
+
+        <div class="container no-space">
+
+
+
+          <div class="row">
+            <div class="col-xs-12 col-md-9">
+              <div class="favourites-main">
+              </div>
+              <div class="row favourites-border-wrapper">
+              </div>
+              <div class="row favourites-border-wrapper">
+                
+
+                <div class="col-xs-12 col-md-8">
+
+                  <div class="row">
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 product-list-wrapper">
+                     
+
+                      <ul class="product-listing product-grid row">
+                        <div *ngFor="let product of products; let i=index">
+                          <div class="productCarouselItemContainer">
+                            <div class="productCarouselItem js-product-carousel-item">
+
+                              <div class="productCarouselItem-overlay addToCartError_000000000000134968_EA" id="addToCartError_000000000000134968_EA" style="display: none"
+                                data-pdt-code="000000000000134968_EA_2">
+                                <div class="productCarouselItem-overlay-close" onclick="getElementById('addToCartError_000000000000134968_EA').style.display='none'">X</div>
+                                <span class="addToCartErrorMsg_000000000000134968_EA" id="addToCartErrorMsg_000000000000134968_EA"></span>
+                              </div>
+
+                              <div *ngIf="product.save" class="image-gallery-savingsbuttonContainer">
+                                <div class="image-gallery-savingsbutton js-savings-amount-off">
+                                  Save
+                                  <div>
+                                    R{{product.save.toFixed(2)}}</div>
+                                </div>
+                                <div class="image-gallery-savingsbutton savingsbuttonPoints">
+                                  Get
+                                  <div>Triple</div>Points
+                                </div>
+                              </div>
+
+                              <div class="item js-product-card-item">
+                                <a (click)="getProduct(product.productId)">
+                                  <div class="thumb">
+                                    <img src="{{product.image}}">
+                                  </div>
+                                  <div class="item-name">{{product.productName}}</div>
+                                  <div class="product-price" style="height: 50px;">
+                                    <div class="item-price">
+                                      <div class="currentPrice  hasSavings">R {{product.newPrice.toFixed(2)}}
+                                      </div>
+                                      <div *ngIf="product.save" class="oldPrice">R{{product.originPrice.toFixed(2)}}</div>
+                                    </div>
+                                  </div>
+                                </a>
+                                <div class="addtocart-component">
+
+                                  <div class="qty-selector input-group js-qty-selector">
+                                    <span class="input-group-btn">
+                                      <button class="btn btn-primary js-qty-selector-minus" (click)="SubQty(product)" type="button"><span
+                                          class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                    </span>
+                                    <input type="text" maxlength="3" class="form-control js-qty-selector-input" size="1" value="{{product.quantity}}" data-max="999"
+                                      data-min="1" name="pdpAddtoCartInput" title="Quantity">
+                                    <span class="input-group-btn">
+                                      <button class="btn btn-primary js-qty-selector-plus" (click)="AddQty(product)" type="button"><span
+                                          class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                    </span>
+                                  </div>
+                                  <div class="actions">
+                                    <div class="ProductCarouselAddToCart-AddToCartAction" data-index="1">
+                                      <div id="addToCartTitle" style="display:none">Added to Your Shopping Cart</div>
+                                      <form id="addToCartForm" class="add_to_cart_form" action="/pnpstorefront/pnp/en/cart/add" method="post"><input
+                                          type="hidden" maxlength="3" size="1" id="qty" name="qty" class="qty js-qty-selector-input"
+                                          value="1">
+                                        <input type="hidden" size="1" id="unitCode" name="unitCode" class="unit-code js-unit-selector-input">
+                                        <input type="hidden" name="productCodePost" value="000000000000134968_EA">
+                                        <input type="hidden" name="quantityInCart_000000000000134968_EA" value="">
+                                        <input type="hidden" name="unitCodeInCart_000000000000134968_EA" value="">
+
+                                        <div class="addToCartButtonContainer container-fluid no-space" data-pdt-code="000000000000134968_EA">
+
+                                          <div id="prodtile-addToCartButton-container_000000000000134968_EA" class="prodtile-addToCartButton-container notAdded addToCartButton_000000000000134968_EA ">
+                                            <button  id="{{i}}" (click)="addToCart(product,i)" name="addToCartButton_000000000000134968_EA" type="submit" class="hasSpin btn btn-default btn-default-productview js-enable-btn">
+                                              <span class="addbuttontextLong centertileBtnWording">Add to trolley</span>
+                                              <span class="addbuttontextShort centertileBtnWording">Add</span>
+                                            </button>
+                                          </div>
+
+                                          <div id="addedToCartDiv" class="prodtile-addedToCart addedToCartDiv_000000000000134968_EA col-xs-5" style=" display:none  ">
+                                            <div class="prodtile-addedToCartInner">
+                                              <div class="prodtile-addedToCartInner-qty lblQuantityInCart_000000000000134968_EA" id="lblQuantityInCart_000000000000134968_EA"></div>
+                                              <button id="removeFromCartButton_000000000000134968_EA" type="button" class="btn btn-primary btn-primary-blue js-enable-btn js-cart-item-remove removeFromCartButton_000000000000134968_EA"
+                                                data-remove-cart-product-url="/pnpstorefront/pnp/en/cart/product/000000000000134968_EA/remove"
+                                                data-product-code="000000000000134968_EA">
+                                              </button>
+                                            </div>
+                                          </div>
+
+                                          <div class="addToCartError-pdp addToCartError_000000000000134968_EA" id="addToCartError" style="display: none">
+                                            <a class="glyphicon glyphicon-remove pdp-cart-notification-remove" href="#"></a>
+                                            <span id="addToCartErrorMsg_000000000000134968_EA" class="addToCartErrorMsg_000000000000134968_EA"></span>
+                                          </div>
+                                        </div>
+                                        <div>
+                                          <input type="hidden" name="CSRFToken" value="8ef27612-3e2b-480f-abd0-3943abaa4ec8">
+                                        </div>
+                                      </form>
+                                    </div>
+                                  </div>
+
+                                  <div class="list-actions">
+                                    <div class="rating js-ratingCalc " data-rating="{&quot;rating&quot;:&quot;&quot;,&quot;total&quot;:5}">
+                                      <div class="rating-stars">
+                                        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
+                                          class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
+                                          class="glyphicon glyphicon-star"></span>
+                                      </div>
+
+                                    </div>
+
+
+                                    <div class="ProductCarouselAddToCart-CarouselAddToShoppingListAction" data-index="1">
+                                      <a href="javascript:" class="glyphicon glyphicon page-check" onclick="ACC.shoppinglist.addProductToShoppingListPopup(this);"
+                                        data-pg="plp"></a>
+
+                                      <div class="overlay-sl"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="prodFavourite">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </ul>
+
+
+
+                      <div id="addToCartTitle" style="display:none">
+                        <div class="add-to-cart-header">
+                          <div class="headline">
+                            <span class="headline-text">Added to Your Shopping Cart</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="pagination-bar bottom">
+                        <div class="row pagination-toolbar">
+                          <div class="helper clearfix hidden-md hidden-lg"></div>
+                          <div class="sort-refine-bar">
+
+                            <div class="col-xs-12 no-space filtering">
+                              <div class="form-group">
+                                <form id="sortForm2" name="sortForm2" method="get" action="#">
+
+                                  <div class="col-xs-12 col-sm-3 col-md-3 no-space grid-width">
+                                    <div class="grid-n-pagination">
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-4 col-md-3 no-space show-width">
+                                    <div class="show-n-number">
+                                      <div class="pagination-item pagination-item-show hidden-md hidden-lg">
+                                        <div class="selectric-wrapper selectric-custom_select selectric-form-control selectric-js-show-facets-plp">
+                                          <div class="selectric-hide-select"><select product:productrefinebutton="" class="custom_select form-control js-show-facets-plp"
+                                              tabindex="-1">
+                                              <option>FILTER BY</option>
+                                            </select></div>
+                                          <div class="selectric"><span class="label">FILTER BY</span><b class="button">▾</b></div>
+                                          <div class="selectric-items" tabindex="-1">
+                                            <div class="selectric-scroll">
+                                              <ul>
+                                                <li data-index="0" class="last selected">FILTER BY</li>
+                                              </ul>
+                                            </div>
+                                          </div><input class="selectric-input" tabindex="0"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-5 col-md-6 no-space sort-width">
+                                    <div class="sort-n-text">
+                                      <input type="hidden" name="q" value=":relevance">
+                                      <input type="hidden" name="show" value="All">
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-5 pagination-wrap">
+                              <ul class="pagination">
+                                <li class="pagination-prev disabled"><span class="glyphicon glyphicon-chevron-left"></span></li>
+                                <li class="active"><span>1<span class="sr-only">(current)</span></span></li>
+                                <li><a class="" href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/c/milk-and-cream703655157?q=%3Arelevance&amp;pageSize=18&amp;page=1">2</a></li>
+                                <li class="pagination-next">
+                                  <a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/c/milk-and-cream703655157?q=%3Arelevance&amp;pageSize=18&amp;page=1"
+                                    rel="next" class="glyphicon glyphicon-chevron-right"></a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-3 stickThis">
+              
+            </div>
+          </div>
+        </div>
+
+
+
+
+        
+
+        <div class="nav-cart accountvoucherlistcomponent hidden-xs hidden-sm" data-mini-cart-url="/pnpstorefront/pnp/en/cart/rollover/MiniCart"
+          data-mini-cart-refresh-url="/pnpstorefront/pnp/en/cart/miniCart/SUBTOTAL" data-mini-cart-name="Cart" data-mini-cart-empty-name="Empty Cart">
+
+          <div class="listPageHeader hasAmendMode">
+            <h1>
+              <span class="navcart-icon"></span>
+              <a style="color: #575757;" href="/cart"><b>MY</b> TROLLEY</a><span id="totalItems" class="right">{{count}}</span>
+            </h1>
+          </div>
+
+          <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
+            <div id="miniCartItems" class="scrollbar-macosx scroll-content scroll-scrolly_visible"
+              style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 595px;">
+              <div class="mini-cart js-mini-cart">
+                <div *ngFor="let carts of cart;let i=index" class="mini-cart-body">
+                  <ol class="mini-cart-list">
+                    <li class="mini-cart-item" id="000000000000225456_EA">
+                      <div class="notification-message-container">
+                        <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-notification-remove" href="#"></a>
+                        <div class="notification-message-text">
+                        </div>
+                      </div>
+
+                      <div class="spin-loader uil-ellipsis-css">
+                        <div class="ib">
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="qty-selector input-group js-mini-cart-qty-selector">
+                        <span class="input-group-btn">
+                          <button id="btnPlus_5" class="btn btn-primary js-mini-cart-qty-selector-plus" (click)="AddQty(carts)" type="button"><span
+                              class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                        </span>
+
+                        <input type="text" maxlength="3" class="form-control js-mini-cart-qty-selector-input" size="1" value="{{carts.quantity}}"
+                          data-max="" data-min="1" name="miniCartAddtoCartInput" id="quantity_5" data-update-cart-item-url="/pnpstorefront/pnp/en/cart/item/5/updateQuantities">
+                        <input type="hidden" id="initialQuantity_5" value="1">
+                        <input type="hidden" id="productCode_5" value="000000000000225456_EA">
+
+                        <span class="input-group-btn">
+                          <button id="btnMinus_5" class="btn btn-primary js-mini-cart-qty-selector-minus" (click)="SubQty(carts)" type="button"><span
+                              class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                        </span>
+                      </div>
+
+                      <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-remove" data-remove-cart-item-url="/pnpstorefront/pnp/en/cart/item/5/remove"
+                        data-remove-cart-item-entry-number="5" data-remove-product-code="000000000000225456_EA" (click)="removeCart(carts)"></a>
+                      <div class="thumb">
+                        <a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA"><img
+                            src="{{carts.image}}" alt="PnP Fresh Cream 250ml" title="PnP Fresh Cream 250ml">
+                        </a></div><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA">
+                      </a><div class="details"><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA">
+                        </a><a class="name" href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA">{{carts.productName}}</a>
+                        <div class="qty">Quantity: 1</div>
+                      </div>
+                      <div>
+                        <div class="priceVariableWeight  showSave">
+                          <span class="priceDiv">
+                            <span class="">
+                              <div class="normalPrice">
+                                R{{carts.newPrice.toFixed(2)}}</div></span>
+                            <div class="oldprice">
+                            </div></span>
+                          <span *ngIf="carts.save" class="pricedata-Save">SAVE R{{carts.save.toFixed(2)}}</span>
+                          <div class="savings">
+                          </div>
+                          <span class="selectedQuantityDiv">
+                            (1g)</span>
+
+                          <span class="priceInformation">
+
+                          </span>
+
+                        </div>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </li>
+                  </ol>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="scroll-element scroll-x scroll-scrolly_visible">
+              <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar" style="width: 103px;"></div>
+              </div>
+            </div>
+            <div class="scroll-element scroll-y scroll-scrolly_visible">
+              <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar" style="height: 529px; top: 62px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mini-cart js-mini-cart">
+            <div id="miniCartTotals" class="mini-cart-totals">
+              <div id="miniCartTotals-subtotal">Trolley Total<span>{{total.toFixed(2)}}</span></div>
+              <div id="miniCartTotals-saving" class="saving-text-grey">Promotional Savings<span> -R{{pro.toFixed(2)}}</span></div>
+              <div id="miniCartTotals-delivery" class="">Delivery Fee<span>R0<span>00<span></span></span></span></div>
+              <!-- <div id="miniCartTotals-vouchers"> -->
+              <div name="miniCartTotals-cashOffValue" id="miniCartTotals-saving" class="saving-text-grey">
+                Cash Off Voucher<span>R0<span>00</span></span>
+              </div>
+              <div id="miniCartTotals-totalPrice">Total<span>R{{(total-pro).toFixed(2)}}</span></div>
+            </div>
+
+            <div class="actions">
+              <div class="MiniCart-CheckoutAction" data-index="1">
+                <form id="formCheckoutAction" action="/pnpstorefront/pnp/en/cart" method="get"><button routerLink="/my-trolley"
+                    type="submit" class="btn btn-fullwidth btn-default btn-custom-green-homepage-checkout">
+                    CHECKOUT</button>
+                  <div>
+                    <input type="hidden" name="CSRFToken" value="38eddcee-eb12-4b4e-a64f-b9fce28a1612">
+                  </div>
+                </form>
+              </div>
+              <div class="MiniCart-ViewCartAction" data-index="2">
+                <form id="formViewCartAction" action="/pnpstorefront/pnp/en/cart" method="get"><button type="submit" class="btn btn-primary btn-primary-blue btn-fullwidth">
+                    VIEW TROLLEY</button>
+                  <div>
+                    <input type="hidden" name="CSRFToken" value="38eddcee-eb12-4b4e-a64f-b9fce28a1612">
+                  </div>
+                </form>
+              </div>
+              <div class="MiniCart-MiniTrolleyUpdateAction" data-index="3">
+              </div>
+              <div class="MiniCart-MiniTrolleyCancelAction" data-index="4">
+              </div>
+            </div>
+
+          </div>
+          <div class="mini-cart-container js-mini-cart-container"></div>
+        </div>
+        <div id="pickupTitle" style="display:none">
+          <div class="pickup-header">
+            <button class="btn btn-primary  back-to-storelist js-back-to-storelist hidden-xs hidden-sm hidden-md hidden-lg">
+              Back</button>
+            <span class="headline-inner">Product Availability by Store Location</span>
+          </div>
+        </div>
+
+
+        <div id="popup_store_pickup_form" style="display:none">
+
+          <div id="pickupModal">
+
+            <div class="pickup-component js-pickup-component">
+
+
+              <div class="find-store-display js-find-store-display">
+                <div class="store-navigation">
+
+                  <div class="pickup-search-product">
+                    <div class="pickup-search-bar">
+                      <form id="command" name="pickupInStoreForm" class="searchPOSForm clearfix" action="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-&amp;-Cream/c/milk-and-cream703655157"
+                        method="post">
+                        <div class="input-group">
+                          <input type="text" class="form-control" name="locationQuery" data-id="locationForSearch" placeholder="Enter a Town/City or Zip Code:">
+                          <span class="input-group-btn">
+                            <button class="btn btn-link" type="button" data-id="pickupstore_location_search_button">
+                              <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                          </span>
+                        </div>
+                        <input type="hidden" name="cartPage" data-id="atCartPage" value="">
+                        <input type="hidden" name="entryNumber" value="" data-id="entryNumber">
+                        <div>
+                          <input type="hidden" name="CSRFToken" value="8ef27612-3e2b-480f-abd0-3943abaa4ec8">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                  <ul class="pickup-store-list js-pickup-store-list">
+                    <li class="loading"><span class="glyphicon glyphicon-repeat"></span></li>
+                    <li class="loading"><span class="glyphicon glyphicon-repeat"></span></li>
+                    <li class="loading"><span class="glyphicon glyphicon-repeat"></span></li>
+                    <li class="loading"><span class="glyphicon glyphicon-repeat"></span></li>
+                    <li class="loading"><span class="glyphicon glyphicon-repeat"></span></li>
+                  </ul>
+                  <div class="store-navigation-pager">
+                    <a class="prev js-pickup-store-pager-prev" href="#"><span class="glyphicon glyphicon-chevron-left"></span>
+                      Previous</a>
+                    <a class="next js-pickup-store-pager-next" href="#">Next<span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <div class="position"><span class="js-pickup-store-pager-item-from"></span>-<span class="js-pickup-store-pager-item-to"></span>
+                      from&nbsp;<span class="js-pickup-store-pager-item-all"></span> &nbsp;stores found</div>
+                  </div>
+                </div>
+
+                <div class="display-details">
+                  <div class="store-tabs js-pickup-tabs">
+                    <div class="tabhead" aria-label="Store Details">
+                      <span class="glyphicon glyphicon-info-sign"></span>
+
+                    </div>
+                    <div class="tabbody">
+                      <div class="store-image">
+                        <div class="js-store-image"></div>
+                        <div class="distance js-store-formattedDistance"></div>
+                      </div>
+                      <div class="store-info">
+                        <div class="name js-store-displayName"></div>
+                        <div class="address">
+                          <div class="js-store-line1"></div>
+                          <div class="js-store-line2"></div>
+                          <div class="js-store-town"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tabhead js-pickup-map-tab" aria-label="Map">
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                    </div>
+                    <div class="tabbody">
+                      <div class="pickup-map js-map-canvas"></div>
+                    </div>
+
+                    <div class="tabhead" aria-label="Hours">
+                      <span class="glyphicon glyphicon-time"></span>
+                    </div>
+                    <div class="tabbody">
+                      <div class="store-openings">
+                        <div class="title">Hours</div>
+                        <dl class="dl-horizontal js-store-openings"></dl>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="pickup-product">
+                    <div class="variants js-pickup-product-variants"></div>
+                    <div class="thumb"></div>
+                    <div class="pickup-product-info">
+                      <div class="name js-pickup-product-info"></div>
+                      <div class="price">
+                        <div class="js-pickup-product-price"></div>
+                        <div class="stock js-store-stockPickup"></div>
+                      </div>
+                    </div>
+                    <div class="action">
+
+                      <form id="command" data-class="add_to_cart_storepickup_form" data-id="add_to_cart_storepickup_form" action="/pnpstorefront/pnp/en/store-pickup/cart/add"
+                        method="post"><input type="hidden" class="js-store-id">
+                        <input type="hidden" class="js-store-productcode" name="productCodePost" value="">
+
+
+
+
+                        <div class="qty-selector js-qty-selector">
+                          <div class="input-group">
+                            <span class="input-group-btn">
+                              <button class="btn btn-primary js-qty-selector-minus" type="button"><span class="glyphicon glyphicon-minus"
+                                  aria-hidden="true"></span></button>
+                            </span>
+                            <input type="text" class="form-control js-qty-selector-input" value="1" name="hiddenPickupQty">
+                            <span class="input-group-btn">
+                              <button class="btn btn-primary js-qty-selector-plus" type="button"><span class="glyphicon glyphicon-plus"
+                                  aria-hidden="true"></span></button>
+                            </span>
+                          </div>
+                        </div>
+                        <button class="btn btn-primary js-add-to-cart-for-pickup-popup" type="submit">Add to cart</button>
+                        <div>
+                          <input type="hidden" name="CSRFToken" value="8ef27612-3e2b-480f-abd0-3943abaa4ec8">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          data-mini-cart-refresh-url="/pnpstorefront/pnp/en/cart/miniCart/SUBTOTAL" data-mini-cart-name="Cart" data-mini-cart-empty-name="Empty
+          Cart">
+
+          <div class="listPageHeader hasAmendMode">
+            <h1>
+              <span class="navcart-icon"></span>
+              <a style="color: #575757;" href="/cart"><b>MY</b> TROLLEY</a><span id="totalItems" class="right">6</span>
+            </h1>
+          </div>
+
+          <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
+            <div id="miniCartItems" class="scrollbar-macosx scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 595px;">
+              <div class="mini-cart js-mini-cart">
+                <div class="mini-cart-body">
+                  <ol class="mini-cart-list">
+                    <li class="mini-cart-item" id="000000000000225456_EA">
+                      <div class="notification-message-container">
+                        <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-notification-remove" href="#"></a>
+                        <div class="notification-message-text">
+                        </div>
+                      </div>
+
+                      <div class="spin-loader uil-ellipsis-css">
+                        <div class="ib">
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="qty-selector input-group js-mini-cart-qty-selector">
+                        <span class="input-group-btn">
+                          <button id="btnPlus_5" class="btn btn-primary js-mini-cart-qty-selector-plus" type="button"><span
+                              class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                        </span>
+
+                        <input type="text" maxlength="3" class="form-control js-mini-cart-qty-selector-input" size="1" value="1" data-max="" data-min="1"
+                          name="miniCartAddtoCartInput" id="quantity_5" data-update-cart-item-url="/pnpstorefront/pnp/en/cart/item/5/updateQuantities">
+                        <input type="hidden" id="initialQuantity_5" value="1">
+                        <input type="hidden" id="productCode_5" value="000000000000225456_EA">
+
+                        <span class="input-group-btn">
+                          <button id="btnMinus_5" class="btn btn-primary js-mini-cart-qty-selector-minus" type="button"><span
+                              class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                        </span>
+                      </div>
+
+                      <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-remove" data-remove-cart-item-url="/pnpstorefront/pnp/en/cart/item/5/remove"
+                        data-remove-cart-item-entry-number="5" data-remove-product-code="000000000000225456_EA" href="#"></a>
+                      <div class="thumb">
+                        <a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA"><img
+                            src="https://cdn-prd-02.pnp.co.za/sys-master/root/h09/h87/8870275874846/225456_EA_65Wx65H" alt="PnP Fresh Cream 250ml"
+                            title="PnP Fresh Cream 250ml">
+                        </a></div><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA">
+                      </a><div class="details"><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA">
+                        </a><a class="name" href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA">PnP
+                          Fresh Cream 250ml</a>
+                        <div class="qty">Quantity: 1</div>
+                      </div>
+                      <div>
+                        <div class="priceVariableWeight  showSave">
+                          <span class="priceDiv">
+                            <span class="">
+                              <div class="normalPrice">
+                                R16<span>99</span></div></span>
+                            <div class="oldprice">
+                            </div></span>
+
+                          <span class="selectedQuantityDiv">
+                            (1g)</span>
+
+                          <span class="priceInformation">
+
+                          </span>
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mini-cart-item" id="000000000000441655_CS">
+                      <div class="notification-message-container">
+                        <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-notification-remove" href="#"></a>
+                        <div class="notification-message-text">
+                        </div>
+                      </div>
+
+                      <div class="spin-loader uil-ellipsis-css">
+                        <div class="ib">
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="qty-selector input-group js-mini-cart-qty-selector">
+                        <span class="input-group-btn">
+                          <button id="btnPlus_4" class="btn btn-primary js-mini-cart-qty-selector-plus" type="button"><span
+                              class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                        </span>
+
+                        <input type="text" maxlength="3" class="form-control js-mini-cart-qty-selector-input" size="1" value="2" data-max="" data-min="1"
+                          name="miniCartAddtoCartInput" id="quantity_4" data-update-cart-item-url="/pnpstorefront/pnp/en/cart/item/4/updateQuantities">
+                        <input type="hidden" id="initialQuantity_4" value="2">
+                        <input type="hidden" id="productCode_4" value="000000000000441655_CS">
+
+                        <span class="input-group-btn">
+                          <button id="btnMinus_4" class="btn btn-primary js-mini-cart-qty-selector-minus" type="button"><span
+                              class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                        </span>
+                      </div>
+
+                      <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-remove" data-remove-cart-item-url="/pnpstorefront/pnp/en/cart/item/4/remove"
+                        data-remove-cart-item-entry-number="4" data-remove-product-code="000000000000441655_CS" href="#"></a>
+                      <div class="thumb">
+                        <a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Sachets/PNP-FULL-CREAM-MILK-SACHET-1L/p/000000000000441655_CS"><img
+                            src="https://cdn-prd-02.pnp.co.za/sys-master/images/hff/h69/9219884908574/silo-6001007217228-front-285591_65Wx65H"
+                            alt="Full Cream Milk Sachet 1l x 20" title="Full Cream Milk Sachet 1l x 20">
+                        </a></div><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Sachets/PNP-FULL-CREAM-MILK-SACHET-1L/p/000000000000441655_CS">
+                      </a><div class="details"><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Sachets/PNP-FULL-CREAM-MILK-SACHET-1L/p/000000000000441655_CS">
+                        </a><a class="name" href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Sachets/PNP-FULL-CREAM-MILK-SACHET-1L/p/000000000000441655_CS">Full
+                          Cream Milk Sachet 1l x 20</a>
+                        <div class="qty">Quantity: 2</div>
+                      </div>
+                      <div>
+                        <div class="priceVariableWeight  showSave">
+                          <span class="priceDiv">
+                            <span class="">
+                              <div class="normalPrice">
+                                R407<span>98</span></div></span>
+                            <div class="oldprice">
+                            </div></span>
+
+                          <span class="selectedQuantityDiv">
+                            (2g)</span>
+
+                          <span class="priceInformation">
+
+                          </span>
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mini-cart-item" id="000000000000349246_CS">
+                      <div class="notification-message-container">
+                        <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-notification-remove" href="#"></a>
+                        <div class="notification-message-text">
+                        </div>
+                      </div>
+
+                      <div class="spin-loader uil-ellipsis-css">
+                        <div class="ib">
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="qty-selector input-group js-mini-cart-qty-selector">
+                        <span class="input-group-btn">
+                          <button id="btnPlus_3" class="btn btn-primary js-mini-cart-qty-selector-plus" type="button"><span
+                              class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                        </span>
+
+                        <input type="text" maxlength="3" class="form-control js-mini-cart-qty-selector-input" size="1" value="2" data-max="" data-min="1"
+                          name="miniCartAddtoCartInput" id="quantity_3" data-update-cart-item-url="/pnpstorefront/pnp/en/cart/item/3/updateQuantities">
+                        <input type="hidden" id="initialQuantity_3" value="2">
+                        <input type="hidden" id="productCode_3" value="000000000000349246_CS">
+
+                        <span class="input-group-btn">
+                          <button id="btnMinus_3" class="btn btn-primary js-mini-cart-qty-selector-minus" type="button"><span
+                              class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                        </span>
+                      </div>
+
+                      <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-remove" data-remove-cart-item-url="/pnpstorefront/pnp/en/cart/item/3/remove"
+                        data-remove-cart-item-entry-number="3" data-remove-product-code="000000000000349246_CS" href="#"></a>
+                      <div class="thumb">
+                        <a href="/pnpstorefront/pnp/en/All-Products/Beverages/Long-Life-Milk-%28UHT%29/Long-Life-Milk-%26-Cream/Long-Life-Milk-%26-Cream---Full-Cream/PNP-UHT-MILK-FULL-CREAM-1L/p/000000000000349246_CS"><img
+                            src="https://cdn-prd-02.pnp.co.za/sys-master/images/h47/hc6/9350545604638/silo-6001007164294-front-335382_65Wx65H"
+                            alt="PnP UHT Full Cream Milk 1l x 6" title="PnP UHT Full Cream Milk 1l x 6">
+                        </a></div><a href="/pnpstorefront/pnp/en/All-Products/Beverages/Long-Life-Milk-%28UHT%29/Long-Life-Milk-%26-Cream/Long-Life-Milk-%26-Cream---Full-Cream/PNP-UHT-MILK-FULL-CREAM-1L/p/000000000000349246_CS">
+                      </a><div class="details"><a href="/pnpstorefront/pnp/en/All-Products/Beverages/Long-Life-Milk-%28UHT%29/Long-Life-Milk-%26-Cream/Long-Life-Milk-%26-Cream---Full-Cream/PNP-UHT-MILK-FULL-CREAM-1L/p/000000000000349246_CS">
+                        </a><a class="name" href="/pnpstorefront/pnp/en/All-Products/Beverages/Long-Life-Milk-%28UHT%29/Long-Life-Milk-%26-Cream/Long-Life-Milk-%26-Cream---Full-Cream/PNP-UHT-MILK-FULL-CREAM-1L/p/000000000000349246_CS">PnP
+                          UHT Full Cream Milk 1l x 6</a>
+                        <div class="qty">Quantity: 2</div>
+                      </div>
+                      <div>
+                        <div class="priceVariableWeight  showSave">
+                          <span class="priceDiv">
+                            <span class="">
+                              <div class="normalPrice">
+                                R139<span>98</span></div></span>
+                            <div class="oldprice">
+                            </div></span>
+
+                          <span class="selectedQuantityDiv">
+                            (2g)</span>
+
+                          <span class="priceInformation">
+
+                          </span>
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mini-cart-item" id="000000000000349245_CS">
+                      <div class="notification-message-container">
+                        <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-notification-remove" href="#"></a>
+                        <div class="notification-message-text">
+                        </div>
+                      </div>
+
+                      <div class="spin-loader uil-ellipsis-css">
+                        <div class="ib">
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="qty-selector input-group js-mini-cart-qty-selector">
+                        <span class="input-group-btn">
+                          <button id="btnPlus_2" class="btn btn-primary js-mini-cart-qty-selector-plus" type="button"><span
+                              class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                        </span>
+
+                        <input type="text" maxlength="3" class="form-control js-mini-cart-qty-selector-input" size="1" value="2" data-max="" data-min="1"
+                          name="miniCartAddtoCartInput" id="quantity_2" data-update-cart-item-url="/pnpstorefront/pnp/en/cart/item/2/updateQuantities">
+                        <input type="hidden" id="initialQuantity_2" value="2">
+                        <input type="hidden" id="productCode_2" value="000000000000349245_CS">
+
+                        <span class="input-group-btn">
+                          <button id="btnMinus_2" class="btn btn-primary js-mini-cart-qty-selector-minus" type="button"><span
+                              class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                        </span>
+                      </div>
+
+                      <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-remove" data-remove-cart-item-url="/pnpstorefront/pnp/en/cart/item/2/remove"
+                        data-remove-cart-item-entry-number="2" data-remove-product-code="000000000000349245_CS" href="#"></a>
+                      <div class="thumb">
+                        <a href="/pnpstorefront/pnp/en/All-Products/Beverages/Long-Life-Milk-%28UHT%29/Long-Life-Milk-%26-Cream/Long-Life-Milk-%26-Cream---Fat-Free/PNP-UHT-FAT-FREE-MILK-1L/p/000000000000349245_CS"><img
+                            src="https://cdn-prd-02.pnp.co.za/sys-master/images/hcf/ha2/9350511263774/silo-6001007164317-front-335377_65Wx65H"
+                            alt="PnP UHT Long Life Fat Free Milk 1l x 6" title="PnP UHT Long Life Fat Free Milk 1l x 6">
+                        </a></div><a href="/pnpstorefront/pnp/en/All-Products/Beverages/Long-Life-Milk-%28UHT%29/Long-Life-Milk-%26-Cream/Long-Life-Milk-%26-Cream---Fat-Free/PNP-UHT-FAT-FREE-MILK-1L/p/000000000000349245_CS">
+                      </a><div class="details"><a href="/pnpstorefront/pnp/en/All-Products/Beverages/Long-Life-Milk-%28UHT%29/Long-Life-Milk-%26-Cream/Long-Life-Milk-%26-Cream---Fat-Free/PNP-UHT-FAT-FREE-MILK-1L/p/000000000000349245_CS">
+                        </a><a class="name" href="/pnpstorefront/pnp/en/All-Products/Beverages/Long-Life-Milk-%28UHT%29/Long-Life-Milk-%26-Cream/Long-Life-Milk-%26-Cream---Fat-Free/PNP-UHT-FAT-FREE-MILK-1L/p/000000000000349245_CS">PnP
+                          UHT Long Life Fat Free Milk 1l x 6</a>
+                        <div class="qty">Quantity: 2</div>
+                      </div>
+                      <div>
+                        <div class="priceVariableWeight  showSave">
+                          <span class="priceDiv">
+                            <span class="">
+                              <div class="normalPrice">
+                                R139<span>98</span></div></span>
+                            <div class="oldprice">
+                            </div></span>
+
+                          <span class="selectedQuantityDiv">
+                            (2g)</span>
+
+                          <span class="priceInformation">
+
+                          </span>
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mini-cart-item" id="000000000000131018_EA">
+                      <div class="notification-message-container">
+                        <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-notification-remove" href="#"></a>
+                        <div class="notification-message-text">
+                        </div>
+                      </div>
+
+                      <div class="spin-loader uil-ellipsis-css">
+                        <div class="ib">
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="qty-selector input-group js-mini-cart-qty-selector">
+                        <span class="input-group-btn">
+                          <button id="btnPlus_1" class="btn btn-primary js-mini-cart-qty-selector-plus" type="button"><span
+                              class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                        </span>
+
+                        <input type="text" maxlength="3" class="form-control js-mini-cart-qty-selector-input" size="1" value="2" data-max="" data-min="1"
+                          name="miniCartAddtoCartInput" id="quantity_1" data-update-cart-item-url="/pnpstorefront/pnp/en/cart/item/1/updateQuantities">
+                        <input type="hidden" id="initialQuantity_1" value="2">
+                        <input type="hidden" id="productCode_1" value="000000000000131018_EA">
+
+                        <span class="input-group-btn">
+                          <button id="btnMinus_1" class="btn btn-primary js-mini-cart-qty-selector-minus" type="button"><span
+                              class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                        </span>
+                      </div>
+
+                      <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-remove" data-remove-cart-item-url="/pnpstorefront/pnp/en/cart/item/1/remove"
+                        data-remove-cart-item-entry-number="1" data-remove-product-code="000000000000131018_EA" href="#"></a>
+                      <div class="thumb">
+                        <a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Jugs/DOUGLASDALE-MILK-FULL-CREAM-JUG-2L/p/000000000000131018_EA"><img
+                            src="https://cdn-prd-02.pnp.co.za/sys-master/root/h33/h42/8900547477534/131018_EA_65Wx65H" alt="Douglasdale Full Cream Milk Plastic Bottle 2 L"
+                            title="Douglasdale Full Cream Milk Plastic Bottle 2 L">
+                        </a></div><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Jugs/DOUGLASDALE-MILK-FULL-CREAM-JUG-2L/p/000000000000131018_EA">
+                      </a><div class="details"><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Jugs/DOUGLASDALE-MILK-FULL-CREAM-JUG-2L/p/000000000000131018_EA">
+                        </a><a class="name" href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Jugs/DOUGLASDALE-MILK-FULL-CREAM-JUG-2L/p/000000000000131018_EA">Douglasdale
+                          Full Cream Milk Plastic Bottle 2 L</a>
+                        <div class="qty">Quantity: 2</div>
+                      </div>
+                      <div>
+                        <div class="priceVariableWeight  showSave">
+                          <span class="priceDiv">
+                            <span class="">
+                              <div class="normalPrice">
+                                R55<span>98</span></div></span>
+                            <div class="oldprice">
+                            </div></span>
+
+                          <span class="selectedQuantityDiv">
+                            (2g)</span>
+
+                          <span class="priceInformation">
+
+                          </span>
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mini-cart-item" id="000000000000116484_EA">
+                      <div class="notification-message-container">
+                        <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-notification-remove" href="#"></a>
+                        <div class="notification-message-text">
+                        </div>
+                      </div>
+
+                      <div class="spin-loader uil-ellipsis-css">
+                        <div class="ib">
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                          <div class="spincircle">
+                            <div></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="qty-selector input-group js-mini-cart-qty-selector">
+                        <span class="input-group-btn">
+                          <button id="btnPlus_0" class="btn btn-primary js-mini-cart-qty-selector-plus" type="button"><span
+                              class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                        </span>
+
+                        <input type="text" maxlength="3" class="form-control js-mini-cart-qty-selector-input" size="1" value="1" data-max="" data-min="1"
+                          name="miniCartAddtoCartInput" id="quantity_0" data-update-cart-item-url="/pnpstorefront/pnp/en/cart/item/0/updateQuantities">
+                        <input type="hidden" id="initialQuantity_0" value="1">
+                        <input type="hidden" id="productCode_0" value="000000000000116484_EA">
+
+                        <span class="input-group-btn">
+                          <button id="btnMinus_0" class="btn btn-primary js-mini-cart-qty-selector-minus" type="button"><span
+                              class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                        </span>
+                      </div>
+
+                      <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-remove" data-remove-cart-item-url="/pnpstorefront/pnp/en/cart/item/0/remove"
+                        data-remove-cart-item-entry-number="0" data-remove-product-code="000000000000116484_EA" href="#"></a>
+                      <div class="thumb">
+                        <a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Sachets/DOUGLASDALE-MILK-FULL-CREAM-SACHET-1L/p/000000000000116484_EA"><img
+                            src="https://cdn-prd-02.pnp.co.za/sys-master/root/h58/hb3/8908185370654/116484_EA_65Wx65H" alt="Douglasdale Full Cream Milk Sachet 1 L"
+                            title="Douglasdale Full Cream Milk Sachet 1 L">
+                        </a></div><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Sachets/DOUGLASDALE-MILK-FULL-CREAM-SACHET-1L/p/000000000000116484_EA">
+                      </a><div class="details"><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Sachets/DOUGLASDALE-MILK-FULL-CREAM-SACHET-1L/p/000000000000116484_EA">
+                        </a><a class="name" href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Fresh-Milk/Full-Cream-Sachets/DOUGLASDALE-MILK-FULL-CREAM-SACHET-1L/p/000000000000116484_EA">Douglasdale
+                          Full Cream Milk Sachet 1 L</a>
+                        <div class="qty">Quantity: 1</div>
+                      </div>
+                      <div>
+                        <div class="priceVariableWeight  showSave">
+                          <span class="priceDiv">
+                            <span class="">
+                              <div class="normalPrice">
+                                R11<span>79</span></div></span>
+                            <div class="oldprice">
+                            </div></span>
+
+                          <span class="selectedQuantityDiv">
+                            (1g)</span>
+
+                          <span class="priceInformation">
+
+                          </span>
+
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="scroll-element scroll-x scroll-scrolly_visible">
+              <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar" style="width: 103px;"></div>
+              </div>
+            </div>
+            <div class="scroll-element scroll-y scroll-scrolly_visible">
+              <div class="scroll-element_outer">
+                <div class="scroll-element_size"></div>
+                <div class="scroll-element_track"></div>
+                <div class="scroll-bar" style="height: 529px; top: 62px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mini-cart js-mini-cart">
+            <div id="miniCartTotals" class="mini-cart-totals">
+              <div id="miniCartTotals-subtotal">Trolley Total<span>R {{total}}</span></div>
+              <div id="miniCartTotals-saving" class="saving-text-grey">Promotional Savings<span>R{{pro}}</span></div>
+              <div id="miniCartTotals-delivery" class="">Delivery Fee<span>R0<span>00<span></span></span></span></div>
+              <!-- <div id="miniCartTotals-vouchers"> -->
+              <div name="miniCartTotals-cashOffValue" id="miniCartTotals-saving" class="saving-text-grey">
+                Cash Off Voucher<span>R0<span>00</span></span>
+              </div>
+              <div id="miniCartTotals-totalPrice">Total<span>R{{(total-pro+delivery).toFixed(2)}}</span></div>
+            </div>
+
+            <div class="actions">
+              <div class="MiniCart-CheckoutAction" data-index="1">
+                <form id="formCheckoutAction" action="/pnpstorefront/pnp/en/cart" method="get"><button type="submit" class="btn btn-fullwidth btn-default btn-custom-green-homepage-checkout">
+                    CHECKOUT</button>
+                  <div>
+                    <input type="hidden" name="CSRFToken" value="38eddcee-eb12-4b4e-a64f-b9fce28a1612">
+                  </div>
+                </form>
+              </div>
+              <div class="MiniCart-ViewCartAction" data-index="2">
+                <form id="formViewCartAction" action="/pnpstorefront/pnp/en/cart" method="get"><button type="submit" class="btn btn-primary btn-primary-blue btn-fullwidth">
+                    VIEW TROLLEY</button>
+                  <div>
+                    <input type="hidden" name="CSRFToken" value="38eddcee-eb12-4b4e-a64f-b9fce28a1612">
+                  </div>
+                </form>
+              </div>
+              <div class="MiniCart-MiniTrolleyUpdateAction" data-index="3">
+              </div>
+              <div class="MiniCart-MiniTrolleyCancelAction" data-index="4">
+              </div>
+            </div>
+
+          </div>
+          <div class="mini-cart-container js-mini-cart-container"></div>
+
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+</body>
+
+
+<my-footer></my-footer>
+
+
+</html>

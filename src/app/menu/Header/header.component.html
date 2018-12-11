@@ -1,0 +1,167 @@
+<link rel="stylesheet" href="../style.css">
+<header class="main-header main-header-md no-print">
+	<div class="nav-top" id="myMenu">
+		<div class="nav-middle no-print">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-12 no-space">
+						<div class="md-secondary-navigation">
+							<ul *ngIf="!user" class="no-print">
+
+								<li>
+									<a href="/pnpstorefront/pnp/en/my-account/delivery-detail" data-gtm-vis-recent-on-screen-7232175_55="673" data-gtm-vis-first-on-screen-7232175_55="673"
+									 data-gtm-vis-total-visible-time-7232175_55="100" data-gtm-vis-has-fired-7232175_55="1">GAUTENG ONLINE</a>
+								</li>
+
+								<li>
+									<a routerLink="/my-regForm">SIGN UP</a></li>
+								<li>
+									<a routerLink="/my-login">LOG IN</a></li>
+
+							</ul>
+							<ul *ngIf="user" class="no-print">
+
+								<li>
+									<a href="/pnpstorefront/pnp/en/my-account/delivery-detail" data-gtm-vis-recent-on-screen-7232175_55="125" data-gtm-vis-first-on-screen-7232175_55="125"
+									 data-gtm-vis-total-visible-time-7232175_55="100" data-gtm-vis-has-fired-7232175_55="1">GAUTENG ONLINE</a>
+								</li>
+								<li class="header-accordion no-print">
+									<div id="header-nav-dropdown" data-auto-expand="" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+										<h3 class="ui-accordion-header ui-state-default ui-corner-all" role="tab" id="ui-id-2" aria-controls="ui-id-3" aria-selected="false"
+										 aria-expanded="false" tabindex="0">
+											<div class="loyalty-accordion-icon-left"></div>
+											<span>HELLO,{{user.name}}<span>! YOUR ACCOUNT<span onclick="showDropDown()" style="font-size:20px;margin-left:0px;">&#8964;</span></span></span>
+
+											<span>Your Account</span>
+
+										</h3>
+										<div class="loyalty-accordion-container ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-id-3"
+										 aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="true" style="display: none; height: 301px;">
+											<div class="header-accordion-links">
+												<div class="header-accordion-links-item">
+													<a href="/pnpstorefront/pnp/en/my-account/address-book" title="My Dashboard">My Dashboard</a></div>
+												<div class="header-accordion-links-item">
+													<a href="/pnpstorefront/pnp/en/self-help" title="Help">Help</a></div>
+												<div class="header-accordion-links-item">
+													<a href="/pnpstorefront/pnp/en/my-account/delivery-detail" title="Book Delivery">Book Delivery</a></div>
+												<div class="header-accordion-links-item">
+													<a href="/pnpstorefront/pnp/en/my-account/orders" title="View &amp; Amend Your Orders">View &amp; Amend Your
+														Orders</a></div>
+												<div class="header-accordion-links-item">
+													<a href="/pnpstorefront/pnp/en/shopping-list" title="Shopping Lists">Shopping Lists</a></div>
+												<div class="header-accordion-links-item">
+													<a href="/pnpstorefront/pnp/en/my-account/business-customer" title="Register for a Business Account" target="_blank">Register
+														for a Business Account</a></div>
+												<div class="header-accordion-links-item">
+													<a href="/pnpstorefront/pnp/en/faq" groupgrey="" title="FAQs">FAQs</a></div>
+												<div class="header-accordion-links-item-bottom">
+													<a (click)="logOut()">Not {{user.name}}? Sign Out</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row bottom-sec">
+
+				<div class="pnp-logo">
+					<div class="simple-banner-component simple-banner introPageHeader">
+						<a routerLink="/my-menu" routerLinkActive="active"><img title="Pick n Pay" alt="Pick n Pay" src="https://cdn-prd-02.pnp.co.za/sys-master/images/h42/hf7/8796170453022/onlineshopping_logo.png"></a>
+					</div>
+				</div>
+				<ul class="sticky-nav-top hidden-lg js-sticky-user-group no-print">
+					<div class="close-nav"><a type="button" aria-role="button" class="js-toggle-sm-navigation btn"><span class="icon-mobile-menu glyphicon-align-justify"></span></a></div>
+				</ul>
+
+				<div class="cart-button">
+					<div class="headerLinks-icons" id="headerLinks-icons-myTrolley">
+						<div id="myTrolleyCount" *ngIf="!user" class="myTrolley-counter">0</div>
+						<div id="myTrolleyCount" *ngIf="user" class="myTrolley-counter">{{count}}</div>
+						<div>
+							<span>
+								<a style="color: #b80047;" href="/pnpstorefront/pnp/en/cart"></a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="truck-button">
+					<div class="headerLinks-icons" id="headerLinks-icons-delivery">
+						<span>
+							<a style="color: #b80047;" routerLink="/my-delivery">DELIVERY TRUCK</a>
+						</span>
+					</div>
+				</div><a type="button" class="pnp-icon-search-btn2 glyphicon glyphicon-search"><span>Search</span></a>
+				<a type="button" class="icon-header-search-close-x"><span>Close</span></a>
+
+				<div class="shopping-lists-button">
+					<div class="col-xs-6 col-md-5 headerLinks-btns" id="HeaderButtonSlot2">
+						<span>
+							<a style="color: #b80047;" href="/pnpstorefront/pnp/en/shopping-list">SHOPPING LISTS</a>
+						</span>
+					</div>
+				</div>
+				<div class="reorder-button">
+					<div class="col-xs-6 col-md-5 headerLinks-btns" id="HeaderButtonSlot1">
+						<span>
+							<a style="color: #b80047;" href="/pnpstorefront/pnp/en/purchased-products">FAVOURITES</a>
+						</span>
+					</div>
+				</div>
+				<div class="search-box">
+					<div class="ui-front">
+						<form [formGroup]="searchForm">
+							<div class="input-group">
+								<input type="text" id="js-site-search-input" class="form-control js-site-search-input ui-autocomplete-input" name="text"
+								 value="" data-uusecase="search" maxlength="100" placeholder="I'm looking for" data-options="{&quot;autocompleteUrl&quot; : &quot;/pnpstorefront/pnp/en/search/autocomplete/SearchBox&quot;,&quot;minCharactersBeforeRequest&quot; : &quot;3&quot;,&quot;waitTimeBeforeRequest&quot; : &quot;500&quot;,&quot;displayProductImages&quot; : true}"
+								 autocomplete="off" formControlName="search">
+								<span class="input-group-btn"> <button class="btn btn-link" type="submit" (click)="search()">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</form>
+
+						<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="nav-bottom">
+		<div style="padding-top: 15px;
+		padding-left: 10px;" class="dropdown">
+			<button routerLink="/app-aisle" class="dropbtn">SHOP BY AISLE</button>
+			<div class="dropdown-content">
+				<a *ngFor="let ai of aisle" (click)="getAllByCat(ai.aisleId)">{{ai.aisleName}}</a>
+
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn" (click)="getBySave()">SPECIALS</button>
+			<div class="dropdown-content">
+
+			</div>
+		</div>
+		
+		<div class="dropdown">
+			<button class="dropbtn" routerLink="/my-recipes">RECIPES</button>
+			
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn" routerLink="/my-competition">COMPETITIONS</button>
+			<div class="dropdown-content">
+
+			</div>
+		</div>
+		
+	</div>
+
+</header>
