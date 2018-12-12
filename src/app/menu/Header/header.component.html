@@ -86,7 +86,7 @@
 						<div id="myTrolleyCount" *ngIf="user" class="myTrolley-counter">{{count}}</div>
 						<div>
 							<span>
-								<a style="color: #b80047;" href="/pnpstorefront/pnp/en/cart"></a>
+								<a style="color: #b80047;" href="/my-trolley"></a>
 							</span>
 						</div>
 					</div>
@@ -138,7 +138,7 @@
 	<div class="nav-bottom">
 		<div style="padding-top: 15px;
 		padding-left: 10px;" class="dropdown">
-			<button routerLink="/app-aisle" class="dropbtn">SHOP BY AISLE</button>
+			<button routerLink="/my-shop" class="dropbtn">SHOP BY AISLE</button>
 			<div class="dropdown-content">
 				<a *ngFor="let ai of aisle" (click)="getAllByCat(ai.aisleId)">{{ai.aisleName}}</a>
 

@@ -1,0 +1,295 @@
+<my-header></my-header>
+<link rel="stylesheet" href="../../recipes/style.css">
+<div class="no-space">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="container">
+                <div class="col-xs-12 no-space yComponentWrapper">
+                    <div class="content">
+                        <!-- EDITABLE CONTENT -->
+                        <p>
+                            <style type="text/css">
+                                .dmht {
+                                    width: 100%;
+                                    height: auto;
+                                    max-width: 100%;
+                                }
+
+                                .dmht img {
+                                    display: block;
+                                    max-width: 100%;
+                                    width: 100%;
+                                    height: auto;
+                                }
+
+                                .dmht p {
+                                    color: #808080;
+                                    font-family: 'pnpFont', Arial, sans-serif;
+                                    font-size: 20px;
+                                    line-height: 1.3;
+                                    margin: 15px 0;
+                                    text-align: center;
+                                }
+
+                                .dmht p a {
+                                    color: #808080;
+                                }
+
+                                .dmht p a:hover {
+                                    color: #26b67c;
+                                }
+
+                                .dmht strong.green {
+                                    color: #26b67c;
+                                    font-family: 'pnpFontBold', Arial, sans-serif;
+                                }
+
+                                .dmht p.termies {
+                                    color: #808080;
+                                    font-family: 'pnpFont';
+                                    font-size: 24px;
+                                    line-height: 1.3;
+                                    margin: 15px 0;
+                                    text-align: left;
+                                }
+
+                                .dmht a.btn-green {
+                                    background: #26b67c;
+                                    border: 1px solid #26b67c;
+                                    color: #FFFFFF;
+                                    text-align: center;
+                                    display: block;
+                                    margin: 30px auto;
+                                    font-size: 16px;
+                                    width: 200px;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    font-family: 'pnpFont';
+                                }
+
+                                .dmht a.btn-green:hover {
+                                    background: #FFFFFF;
+                                    color: #26b67c;
+                                }
+
+
+                                @media (max-width: 580px) {
+
+                                    .dmht p {
+                                        font-size: 16px;
+                                        line-height: 18px;
+                                        margin: 15px 10px;
+                                    }
+                                    .dmht p.termies {
+                                        font-size: 14px;
+                                    }
+
+                                }
+                            </style>
+                            
+                        </p>
+                        <div class="login-modal" *ngIf="message" id="login-modal" >
+
+                                <div class="login-image" style="background-image: url(https://cdn-prd-02.pnp.co.za/sys-master/images/h1b/h63/8921891962910/login-modal.jpg)"></div>
+                        
+                                <div class="login-content">
+                                  <a (click)='close()' title="Close" class="close">X</a>
+                                  <h2>COULD YOU DO US A <br><span>FLAVOUR?</span></h2>
+                                  <h4><b>LOG IN</b> or <b>SIGN UP</b> now to find out:</h4>
+                                  <div class="login-list"><span>1</span> <h4>If we <b>DELIVER</b> to you</h4>
+                                  </div>
+                                  <div class="login-list"><span>2</span> <h4>If a particular <b>PRODUCT&nbsp;</b>is available in your area</h4>
+                                  </div>
+                                  <div class="login-list"><span>3</span> <h4>The <b>PRICE&nbsp;</b>(maybe it's on special in your area!)</h4>
+                                  </div>
+                                  <div class="login-modal-buttons">
+                                    <a routerLink="/my-login"><button type="button" class="btn-custom btn-custom-blue btn-login-modal-login">LOG
+                                        IN</button></a>
+                                    <a routerLink="/my-signin"><button type="button" class="btn-custom btn-custom-pink btn-login-modal-signup">SIGN
+                                        UP</button></a>
+                        
+                                  </div>
+                                </div>
+                        
+                              </div>
+                        <div class="col-xs-12 no-space yComponentWrapper dmht dmhtspace" style="margin-top: 137px;"><img src="{{com.banner}}" alt="NIDO"></div>
+                        <div class="col-xs-12 no-space yComponentWrapper dmht">
+                            <div class="node-2 xup-type-ImageTileComponent col-xs-12">
+                                <p>{{com.description}}. Valid until {{com.endDate}}. <a href="https://www.pnp.co.za/tncs">Ts&amp;Cs</a>
+                                    apply.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 no-space yComponentWrapper">
+                    <div>
+                    </div>
+                    <div class="carousel-component fed-prodref-carousel small-chevron ">
+                        <!--<div class="headline"></div>-->
+                        <div class="carousel js-owl-carousel js-owl-lazy-product-reference js-owl-carousel-reference owl-carousel owl-theme owl-loaded">
+
+
+                            <div class="owl-stage-outer"  *ngFor="let pro of products" style="width: 388px;
+                            float: left;">
+                                <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 780px;">
+                                    
+                                    
+                        
+
+                                    <div class="owl-item active" style="width: 380px; margin-right: 10px;">
+                                        <div class="productCarouselItem js-product-carousel-item">
+
+                                            <div class="productCarouselItem-overlay addToCartError_000000000000744203_EA" id="addToCartError_000000000000744203_EA" style="display: none">
+                                                <div class="productCarouselItem-overlay-close" onclick="getElementById('addToCartError_000000000000744203_EA').style.display='none'">X</div>
+                                                <span class="addToCartErrorMsg_000000000000744203_EA" id="addToCartErrorMsg_000000000000744203_EA"></span>
+                                            </div>
+
+                                            <div *ngIf="pro.save" class="image-gallery-savingsbuttonContainer">
+                                                    <div class="image-gallery-savingsbutton js-savings-amount-off">
+                                                      Save
+                                                      <div>
+                                                        R{{pro.save.toFixed(2)}}</div>
+                                                    </div>
+                                                    <div class="image-gallery-savingsbutton savingsbuttonPoints">
+                                                      Get
+                                                      <div>Triple</div>Points
+                                                    </div>
+                                                  </div>
+
+                                            <div class="item js-product-card-item">
+                                                    <a (click)="getProduct(pro.productId)">
+                                                            <div class="thumb">
+                                                              <img src="{{pro.image}}">
+                                                            </div>
+                                                            <div class="item-name">{{pro.productName}}</div>
+                                                            <div class="product-price" style="height: 50px;">
+                                                              <div class="item-price">
+                                                                <div class="currentPrice  hasSavings">R {{pro.newPrice.toFixed(2)}}
+                                                                </div>
+                                                                <div *ngIf="pro.save" class="oldPrice">R{{pro.originPrice.toFixed(2)}}</div>
+                                                              </div>
+                                                            </div>
+                                                          </a>
+                                                <div class="addtocart-component">
+
+                                                        <div class="qty-selector input-group js-qty-selector">
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-primary js-qty-selector-minus" (click)="SubQty(pro)" type="button"><span class="glyphicon glyphicon-minus"
+                                                                         aria-hidden="true"></span></button>
+                                                                </span>
+                                                                <input type="text" maxlength="3" class="form-control js-qty-selector-input" size="1" value="{{pro.quantity}}" data-max="999"
+                                                                 data-min="1" name="pdpAddtoCartInput" title="Quantity">
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-primary js-qty-selector-plus" (click)="AddQty(pro)" type="button"><span class="glyphicon glyphicon-plus"
+                                                                         aria-hidden="true"></span></button>
+                                                                </span>
+                                                            </div>
+                                                    <div class="actions">
+                                                        <div class="ProductCarouselAddToCart-AddToCartAction" data-index="1">
+                                                            <div id="addToCartTitle" style="display:none">Added to Your Shopping
+                                                                Cart</div>
+                                                            <form id="addToCartForm" class="add_to_cart_form" action="/pnpstorefront/pnp/en/cart/add" method="post"><input
+                                                                    type="hidden" maxlength="3" size="1" id="qty" name="qty"
+                                                                    class="qty js-qty-selector-input" value="1">
+                                                                <input type="hidden" size="1" id="unitCode" name="unitCode" class="unit-code js-unit-selector-input">
+                                                                <input type="hidden" name="productCodePost" value="000000000000744203_EA">
+                                                                <input type="hidden" name="quantityInCart_000000000000744203_EA" value="0">
+                                                                <input type="hidden" name="unitCodeInCart_000000000000744203_EA" value="">
+
+                                                                <div class="addToCartButtonContainer container-fluid no-space" data-pdt-code="000000000000744203_EA">
+
+                                                                        <div id="prodtile-addToCartButton-container_000000000000357838_EA" class="prodtile-addToCartButton-container notAdded addToCartButton_000000000000357838_EA ">
+                                                                                <button id="addToCartButton" (click)="addToCart(pro)" name="addToCartButton_000000000000357838_EA" type="submit" class="hasSpin btn btn-default btn-default-productview js-enable-btn">
+                                                                                    <span class="addbuttontextLong centertileBtnWording">Add to trolley</span>
+                                                                                    <span class="addbuttontextShort centertileBtnWording">Add</span>
+                                                                                </button>
+                                                                            </div>
+
+                                                                    <div id="addedToCartDiv_000000000000744203_EA" class="prodtile-addedToCart addedToCartDiv_000000000000744203_EA col-xs-5"
+                                                                        style=" display:none  ">
+                                                                        <div class="prodtile-addedToCartInner">
+                                                                            <div class="prodtile-addedToCartInner-qty lblQuantityInCart_000000000000744203_EA" id="lblQuantityInCart_000000000000744203_EA">0</div>
+                                                                            <button id="removeFromCartButton_000000000000744203_EA" type="button" class="btn btn-primary btn-primary-blue js-enable-btn js-cart-item-remove removeFromCartButton_000000000000744203_EA"
+                                                                                data-remove-cart-product-url="/pnpstorefront/pnp/en/cart/product/000000000000744203_EA/remove"
+                                                                                data-product-code="000000000000744203_EA">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="addToCartError-pdp addToCartError_000000000000744203_EA" id="addToCartError_000000000000744203_EA" style="display: none">
+                                                                        <a class="glyphicon glyphicon-remove pdp-cart-notification-remove" href="#"></a>
+                                                                        <span id="addToCartErrorMsg_000000000000744203_EA" class="addToCartErrorMsg_000000000000744203_EA"></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="hidden" name="CSRFToken" value="5c544a6b-70a4-4307-a77a-c169f4c477ba">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="list-actions">
+                                                        <div class="rating js-ratingCalc " data-rating="{&quot;rating&quot;:&quot;&quot;,&quot;total&quot;:5}">
+                                                            <div class="rating-stars">
+                                                                <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
+                                                                    class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
+                                                                    class="glyphicon glyphicon-star"></span>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        <div class="ProductCarouselAddToCart-CarouselAddToShoppingListAction" data-index="1">
+                                                            <a href="javascript:" class="glyphicon glyphicon page-check" onclick="ACC.shoppinglist.addProductToShoppingListPopup(this);"
+                                                                data-pg="plp"></a>
+
+                                                            <div class="overlay-sl"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="prodFavourite">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-controls">
+                                <div class="owl-nav" style="display: none;">
+                                    <div class="owl-prev" style="display: none;"><span class="glyphicon small-chevron icon-chevron-small-left"></span></div>
+                                    <div class="owl-next"
+                                        style="display: none;"><span class="glyphicon small-chevron icon-chevron-small-right"></span></div>
+                                </div>
+                                <div class="owl-dots" style="display: none;">
+                                    <div class="owl-dot active"><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+                <div class="col-xs-12 no-space yComponentWrapper">
+                    <div class="content">
+                        <div class="col-xs-12 no-space yComponentWrapper dmht">
+                            <div class="node-2 xup-type-ImageTileComponent col-xs-12">
+                                <p>IMPORTANT NOTICE. A well-balanced diet, both during pregnancy and after delivery, helps
+                                    sustain an adequate supply of breastmilk. Exclusive breastfeeding is recommended during
+                                    the first six months of life, followed by the introduction of adequate nutritious complementary
+                                    foods, along with sustained breastfeeding up to two years of age and beyond. NIDO 3+
+                                    is not a breastmilk substitute. As babies grow at different rates, seek advice from your
+                                    healthcare professional on the appropriate time when your baby should start receiving
+                                    this product.</p>
+                                <p><a href="https://www.pnp.co.za/tncs" style="text-decoration:underline;">Terms &amp; Conditions</a>
+                                    apply</p>
+                            </div>
+                        </div>
+                        <!--yComponentWrapper-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<my-footer></my-footer>

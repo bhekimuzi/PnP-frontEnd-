@@ -13,6 +13,7 @@ import { Aisle } from './model/Aisle.model';
 import { Order } from './model/Order.model';
 import { Payment } from './model/payment.model';
 import { Recipe } from './model/Recipe.model';
+import { Competition } from './model/competition';
 
 @Injectable()
 export class AppService {
@@ -156,6 +157,26 @@ myStoreQuantity(cart:Product[]){
 }
 supply(product:Product){
   return this.http.put(this.baseUrl+"Supply/",product);
+}
+
+clearCart(){
+  return this.http.get(this.baseUrl+"RevomeCart").map(this.extractData);
+}
+
+saveCompetition(competition:Competition){
+  return this.http.post(this.baseUrl+"Competition",competition)
+}
+
+getAllCompetition(){
+  return this.http.get(this.baseUrl+"GetAllCompetition");
+}
+
+getComById(competitionId:number){
+  return this.http.get(this.baseUrl+"GetById/"+competitionId).map(this.extractData);
+}
+
+getOrder(){
+  return this.http.get(this.baseUrl+"GetOrder");
 }
 
 

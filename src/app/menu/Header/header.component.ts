@@ -80,6 +80,10 @@ export class HeaderComponent implements OnInit,DoCheck{
   logOut(){
     this.sessionService.clearUser();
     this.sessionService.clearCount();
+    this.service.clearCart().subscribe((clear)=>{
+this.products =clear;
+this.sessionService.setCart(this.products);
+    },(error)=>{});
     this.router.navigate(['/my-menu']);
   }
   getCount(){

@@ -38,6 +38,10 @@ import { MyRecipeComponent } from './recipes/myRecipe/myRecipe.component';
 import { AddRecipeComponent } from './admin/recipe/addRecipe.component';
 import { CompetitionComponent } from './competition/competition.component';
 import { SupplierComponent } from './supplier/supplier.component';
+import { AddCompetitionComponent } from './admin/competition/addCompetition.component';
+import { MyCompetitionComponent } from './competition/myCompetition/myCompetition.component';
+import { ShopComponent } from './menu/shop/shop.component';
+import { DeliveryManComponent } from './deliveryMan/deliveryMan.component';
 
 
 
@@ -72,11 +76,15 @@ import { SupplierComponent } from './supplier/supplier.component';
     {path:'my-rec', component: MyRecipeComponent},
     {path:'my-addRecipes', component: AddRecipeComponent},
     {path:'my-competition', component: CompetitionComponent},
-    {path:'my-supplier', component: SupplierComponent}
+    {path:'my-supplier', component: SupplierComponent},
+    {path:'my-addCompetion', component: AddCompetitionComponent},
+    {path:'my-com', component: MyCompetitionComponent},
+    {path:'my-shop', component: ShopComponent},
+    {path:'my-deliveryMan', component: DeliveryManComponent}
     
 
   ]) ],
-declarations: [ AppComponent ,FreshFoodComponent,SupplierComponent,CompetitionComponent, AddRecipeComponent,MyRecipeComponent,RecipesComponent,PaymentComponent,OrderSummaryComponent,TrolleyComponent,DeliveryComponent,FooterComponent, HeaderComponent,MyProductComponent,ProductComponent,AisleComponent, MenuComponent,LoginComponent,CategoryComponent,AdminComponent,RegisterComponent,SigninComponent,RegFormComponent,LoggedComponent ],
+declarations: [ AppComponent ,FreshFoodComponent,DeliveryManComponent,ShopComponent,MyCompetitionComponent,AddCompetitionComponent,SupplierComponent,CompetitionComponent, AddRecipeComponent,MyRecipeComponent,RecipesComponent,PaymentComponent,OrderSummaryComponent,TrolleyComponent,DeliveryComponent,FooterComponent, HeaderComponent,MyProductComponent,ProductComponent,AisleComponent, MenuComponent,LoginComponent,CategoryComponent,AdminComponent,RegisterComponent,SigninComponent,RegFormComponent,LoggedComponent ],
 providers:[AppService,SessionService],
   bootstrap:[ AppComponent ]
 })

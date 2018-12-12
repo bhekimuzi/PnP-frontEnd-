@@ -11,6 +11,7 @@ import { Category } from './model/category.model';
 import { Aisle } from './model/Aisle.model';
 import { Order } from './model/Order.model';
 import { Recipe } from './model/Recipe.model';
+import { Competition } from './model/competition';
 
 @Injectable()
 export class SessionService {
@@ -26,7 +27,17 @@ export class SessionService {
  public pro = 0;
  public order:Order;
  public recipe:Recipe;
+ public competition:Competition;
   
+ setCompetition(data:any){
+  this.competition=data;
+  sessionStorage.setItem("competition",JSON.stringify(this.competition))
+}
+
+getCompetition(){
+  return JSON.parse(sessionStorage.getItem("competition"));
+}
+
 setRecipe(data:any){
   this.recipe=data;
   sessionStorage.setItem("recipe",JSON.stringify(this.recipe))

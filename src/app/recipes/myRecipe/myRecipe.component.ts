@@ -37,6 +37,8 @@ export class MyRecipeComponent implements OnInit {
     this.getUser();
     this.getCart();
     this.getCount();
+    this.getTotalPro();
+    this.getTotalPrice();
   }
 
   getUser(){
@@ -46,6 +48,13 @@ export class MyRecipeComponent implements OnInit {
       this.count =this.sessionService.getCount();
     }
   
+
+    getTotalPrice(){
+      this.service.getTotalPrice().subscribe((getTotal)=>{
+  this.total =getTotal;
+  this.sessionService.setTotal(this.total);
+      },(error)=>{});
+  }
      getCart(){
        this.service.getAllCart().subscribe((getAllCart)=>{
   this.cart =JSON.parse(getAllCart['_body']) ;
@@ -130,41 +139,106 @@ export class MyRecipeComponent implements OnInit {
 
   }
 
-  setDisabled(i:any){
-    return i==0;
+  
+
+  addToCart(product: Product) {
+
+
+
+    console.log(product);
+    if (this.user != null) {
+      if (this.cart.find((yProduct) => yProduct.productId == product.productId)) {
+        this.newPrice = product.newPrice / product.quantity;
+        this.originPrice = product.originPrice / product.quantity;
+        this.save = product.save / product.quantity;
+        product.quantity++;
+        product.newPrice = product.newPrice + this.newPrice;
+        product.originPrice = product.originPrice + this.originPrice;
+        product.save = product.save + this.save;
+        this.service.updateCart(product).subscribe((update) => {
+          this.cart = update;
+          this.sessionService.setCart(this.cart);
+          this.service.getTotalPrice().subscribe((getTotal) => {
+            this.total = getTotal;
+            this.sessionService.setTotal(this.total);
+          }, (error) => { });
+          this.service.getTotalPro().subscribe((getPro) => {
+            this.pro = getPro;
+            this.sessionService.setPromotion(this.pro);
+          }, (error) => { });
+        }, (error) => { });
+  
+      } else {
+        this.service.addToCart(product).subscribe((cart) => {
+          this.count = cart;
+          this.sessionService.setCount(this.count);
+          this.service.getAllCart().subscribe((getAllCart) => {
+            this.cart = JSON.parse(getAllCart['_body']);
+            this.sessionService.setCart(this.cart);
+            this.service.getTotalPrice().subscribe((getTotal) => {
+              this.total = getTotal;
+              this.sessionService.setTotal(this.total);
+            }, (error) => { });
+            this.service.getTotalPro().subscribe((getPro) => {
+              this.pro = getPro;
+              this.sessionService.setPromotion(this.pro);
+            }, (error) => { });
+          }, (error) => {
+  
+          });
+  
+        });
+  
+      }
+    } else {
+      this.message = true;
+    }
   }
 
-  addToCart(product:Product,i:any){
-    
-   
-   
-    console.log(product);
-    if(this.user!=null){
-  this.service.addToCart(product).subscribe((cart)=>{
-  this.count =cart;
-  this.sessionService.setCount(this.count);
-  this.service.getAllCart().subscribe((getAllCart)=>{
-    this.cart =JSON.parse(getAllCart['_body']) ;
-    this.sessionService.setCart(this.cart);
-    
-         },(error)=>{
-    
-         });
-         this.service.getTotalPrice().subscribe((getTotal)=>{
-          this.total =getTotal;
-          this.sessionService.setTotal(this.total);
-              },(error)=>{});
-    });
-   
-  }else{
-    this.message =true;
-    
-  }
-  return i==0;
-  }
+
+
   close(){
     this.message=false;
     
   }
 
+ removeCart(product:Product) {
+
+    this.service.removeCart(product.productId).subscribe((remove) => {
+      this.count = remove;
+
+      if (product.quantity > 1) {
+        this.newPrice = product.newPrice / product.quantity;
+        this.originPrice = product.originPrice / product.quantity;
+        this.save = product.save / product.quantity;
+        product.quantity = 1;
+        product.newPrice = this.newPrice * product.quantity;
+        product.originPrice = this.originPrice * product.quantity;
+        product.save = this.save * product.quantity;
+        console.log(product);
+        this.sessionService.setCount(this.count);
+      }
+
+      this.service.getAllCart().subscribe((getAllCart) => {
+        this.cart = JSON.parse(getAllCart['_body']);
+        this.sessionService.setCart(this.cart);
+      }, (error) => {
+
+      });
+      this.service.getTotalPrice().subscribe((getTotal) => {
+        this.total = getTotal;
+        this.sessionService.setTotal(this.total);
+      }, (error) => { });
+      this.service.getTotalPro().subscribe((getPro) => {
+        this.pro = getPro;
+        this.sessionService.setPromotion(this.pro);
+      }, (error) => { });
+    }, (error) => { })
+  }
+  getTotalPro() {
+    this.service.getTotalPro().subscribe((getPro) => {
+      this.pro = getPro;
+      this.sessionService.setPromotion(this.pro);
+    }, (error) => { });
+  }
 }

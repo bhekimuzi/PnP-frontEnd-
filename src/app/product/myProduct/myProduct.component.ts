@@ -106,7 +106,7 @@ this.sessionService.setTotal(this.total);
     },(error)=>{});
 }
 
-addToCart(product: Product, i: any) {
+addToCart(product: Product) {
 
 
 

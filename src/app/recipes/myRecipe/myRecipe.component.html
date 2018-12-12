@@ -38,38 +38,162 @@
         </div>
     </div>
     <div class="container no-space">
-        <div class="col-xs-12 col-md-3 col-md-push-9 stickThis">
-            <div class="">
-                <div class="mock-loyalty-link">
-                    <a href="http://www.picknpay.co.za/smartshopper-overview " target="_blank&quot;&quot;"><span>Smart</span>
-                        Shopper</a>
-                </div>
-            </div>
-            <div class="">
-                <div class="iframecomponent">
 
-                    <!-- Each iframecomponent iframe on the page requires a unique ID or they're all assigned the value returned by the last to be processed. -->
-                    <script type="text/javascript">
-                        var PnPIframeResizer = PnPIframeResizer || {};
-                        PnPIframeResizer.IframeCount === undefined ? PnPIframeResizer.IframeCount = 1 : PnPIframeResizer.IframeCount++;
-                        document.write('<iframe id="PnPIframe' + PnPIframeResizer.IframeCount + '" height="100%" width="265px" scrolling="no" src="https://resolve.pnp.co.za/Address/InAreaWidgetNew.htm" frameborder="0"><p>Your browser does not support iframes.</p></iframe>')
-                    </script><iframe id="PnPIframe1" height="100%" width="265px" scrolling="no" src="https://resolve.pnp.co.za/Address/InAreaWidgetNew.htm"
-                        frameborder="0" style="overflow: hidden; height: 281px;"><p>Your browser does not support iframes.</p></iframe>
 
-                    <script src="/pnpstorefront/_ui/shared/js/iframeResizer.min.js" type="text/javascript">
-                    </script>
-                    <script type="text/javascript">
-                        iFrameResize({
-                            log: true,
-                            enablePublicMethods: true,
-                            resizeFrom: "child",
-                            checkOrigin: false
-                        });
-                    </script>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-9 col-md-pull-3 CMS-campaignPage">
+       
+
+        <div class="nav-cart accountvoucherlistcomponent hidden-xs hidden-sm" data-mini-cart-url="/pnpstorefront/pnp/en/cart/rollover/MiniCart"
+        data-mini-cart-refresh-url="/pnpstorefront/pnp/en/cart/miniCart/SUBTOTAL" data-mini-cart-name="Cart" data-mini-cart-empty-name="Empty Cart">
+
+           <div class="listPageHeader hasAmendMode">
+               <h1>
+                   <span class="navcart-icon"></span>
+                   <a style="color: #575757;" href="/cart"><b>MY</b> TROLLEY</a><span id="totalItems" class="right">{{count}}</span>
+               </h1>
+           </div>
+
+           <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
+               <div id="miniCartItems" class="scrollbar-macosx scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 595px;">
+                   <div class="mini-cart js-mini-cart">
+                       <div *ngFor="let carts of cart" class="mini-cart-body">
+                           <ol class="mini-cart-list">
+                               <li class="mini-cart-item" id="000000000000225456_EA">
+                                   <div class="notification-message-container">
+                                       <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-notification-remove" href="#"></a>
+                                       <div class="notification-message-text">
+                                       </div>
+                                   </div>
+
+                                   <div class="spin-loader uil-ellipsis-css">
+                                       <div class="ib">
+                                           <div class="spincircle">
+                                               <div></div>
+                                           </div>
+                                           <div class="spincircle">
+                                               <div></div>
+                                           </div>
+                                           <div class="spincircle">
+                                               <div></div>
+                                           </div>
+                                           <div class="spincircle">
+                                               <div></div>
+                                           </div>
+                                       </div>
+                                   </div>
+
+                                   <div class="qty-selector input-group js-mini-cart-qty-selector">
+                                       <span class="input-group-btn">
+                                           <button id="btnPlus_5" class="btn btn-primary js-mini-cart-qty-selector-plus" (click)="AddQty(carts)" type="button"><span
+                                                class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                       </span>
+
+                                       <input type="text" maxlength="3" class="form-control js-mini-cart-qty-selector-input" size="1" value="{{carts.quantity}}"
+                                        data-max="" data-min="1" name="miniCartAddtoCartInput" id="quantity_5" data-update-cart-item-url="/pnpstorefront/pnp/en/cart/item/5/updateQuantities">
+                                       <input type="hidden" id="initialQuantity_5" value="1">
+                                       <input type="hidden" id="productCode_5" value="000000000000225456_EA">
+
+                                       <span class="input-group-btn">
+                                           <button id="btnMinus_5" class="btn btn-primary js-mini-cart-qty-selector-minus" (click)="SubQty(carts)" type="button"><span
+                                                class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                       </span>
+                                   </div>
+
+                                   <a class="glyphicon glyphicon-remove mini-cart-remove js-mini-cart-remove" data-remove-cart-item-url="/pnpstorefront/pnp/en/cart/item/5/remove"
+                                    data-remove-cart-item-entry-number="5" data-remove-product-code="000000000000225456_EA" (click)="removeCart(carts)"></a>
+                                   <div class="thumb">
+                                       <a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA"><img
+                                            src="{{carts.image}}" alt="PnP Fresh Cream 250ml" title="PnP Fresh Cream 250ml">
+                                       </a></div><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA">
+                                   </a><div class="details"><a href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA">
+                                       </a><a class="name" href="/pnpstorefront/pnp/en/All-Products/Fresh-Food/Milk-%26-Cream/Cream/Fresh-Cream/PNP-FRESH-CREAM-250ML/p/000000000000225456_EA">{{carts.productName}}</a>
+                                       <div class="qty">Quantity: 1</div>
+                                   </div>
+                                   <div>
+                                       <div class="priceVariableWeight  showSave">
+                                           <span class="priceDiv">
+                                               <span class="">
+                                                   <div class="normalPrice">
+                                                       R{{carts.newPrice.toFixed(2)}}</div></span>
+                                               <div class="oldprice">
+                                               </div></span>
+                                           <span *ngIf="carts.save" class="pricedata-Save">SAVE R{{carts.save.toFixed(2)}}</span>
+                                           <div class="savings">
+                                           </div>
+                                           <span class="selectedQuantityDiv">
+                                               (1g)</span>
+
+                                           <span class="priceInformation">
+
+                                           </span>
+
+                                       </div>
+                                   </div>
+
+
+                               </li>
+                           </ol>
+                       </div>
+                   </div>
+
+
+               </div>
+               <div class="scroll-element scroll-x scroll-scrolly_visible">
+                   <div class="scroll-element_outer">
+                       <div class="scroll-element_size"></div>
+                       <div class="scroll-element_track"></div>
+                       <div class="scroll-bar" style="width: 103px;"></div>
+                   </div>
+               </div>
+               <div class="scroll-element scroll-y scroll-scrolly_visible">
+                   <div class="scroll-element_outer">
+                       <div class="scroll-element_size"></div>
+                       <div class="scroll-element_track"></div>
+                       <div class="scroll-bar" style="height: 529px; top: 62px;"></div>
+                   </div>
+               </div>
+           </div>
+
+           <div class="mini-cart js-mini-cart">
+               <div id="miniCartTotals" class="mini-cart-totals">
+                   <div id="miniCartTotals-subtotal">Trolley Total<span>{{total.toFixed(2)}}</span></div>
+                   <div id="miniCartTotals-saving" class="saving-text-grey">Promotional Savings<span> -R{{pro.toFixed(2)}}</span></div>
+                   <div id="miniCartTotals-delivery" class="">Delivery Fee<span>R0<span>00<span></span></span></span></div>
+                   <!-- <div id="miniCartTotals-vouchers"> -->
+                   <div name="miniCartTotals-cashOffValue" id="miniCartTotals-saving" class="saving-text-grey">
+                       Cash Off Voucher<span>R0<span>00</span></span>
+                   </div>
+                   <div id="miniCartTotals-totalPrice">Total<span>R{{(total-pro).toFixed(2)}}</span></div>
+               </div>
+
+               <div class="actions">
+                   <div class="MiniCart-CheckoutAction" data-index="1">
+                       <form id="formCheckoutAction" action="/pnpstorefront/pnp/en/cart" method="get"><button routerLink="/my-trolley" type="submit"
+                            class="btn btn-fullwidth btn-default btn-custom-green-homepage-checkout">
+                               CHECKOUT</button>
+                           <div>
+                               <input type="hidden" name="CSRFToken" value="38eddcee-eb12-4b4e-a64f-b9fce28a1612">
+                           </div>
+                       </form>
+                   </div>
+                   <div class="MiniCart-ViewCartAction" data-index="2">
+                       <form id="formViewCartAction" action="/pnpstorefront/pnp/en/cart" method="get"><button type="submit" class="btn btn-primary btn-primary-blue btn-fullwidth">
+                               VIEW TROLLEY</button>
+                           <div>
+                               <input type="hidden" name="CSRFToken" value="38eddcee-eb12-4b4e-a64f-b9fce28a1612">
+                           </div>
+                       </form>
+                   </div>
+                   <div class="MiniCart-MiniTrolleyUpdateAction" data-index="3">
+                   </div>
+                   <div class="MiniCart-MiniTrolleyCancelAction" data-index="4">
+                   </div>
+               </div>
+
+           </div>
+           <div class="mini-cart-container js-mini-cart-container"></div>
+       </div>
+        
+        <div class="col-xs-12 col-md-9 col-md-pull-3 CMS-campaignPage" style="margin-left: 298px;">
             <div class="">
                 <a href="">
                     <img title="Bread-&amp;-Butter-Pudding-header.jpg" src="{{recipe.banner}}" alt="Bread-&amp;-Butter-Pudding-header.jpg" class="img-responsive"
@@ -139,7 +263,7 @@
 
 
 
-                    <div class="owl-stage-outer" *ngFor="let pro of product;let i=index">
+                    <div class="owl-stage-outer" style="float: left;" *ngFor="let pro of product;let i=index">
                         <div class="owl-stage" style=" transition: all 0s ease 0s;">
 
 
