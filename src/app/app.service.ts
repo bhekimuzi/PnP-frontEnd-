@@ -179,6 +179,10 @@ getOrder(){
   return this.http.get(this.baseUrl+"GetOrder");
 }
 
+reset(user:User){
+  return this.http.post(this.baseUrl+"reset",user)
+}
+
 
 
       

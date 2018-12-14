@@ -25,7 +25,8 @@ ProductForm =new FormGroup({
   save:new FormControl('',),
   image:new FormControl('',Validators.required),
   quantity:new FormControl('',Validators.required),
-  brandName:new FormControl('',Validators.required)
+  brandName:new FormControl('',Validators.required),
+  storeQuantity:new FormControl('',Validators.required)
 });
 
 ngOnInit() {

@@ -337,3 +337,53 @@ margin:auto;
    
     /*opacity: 0.9;*/
 }
+.profile .heading1 {
+    font-size: 24px;
+    font-weight: normal;
+    font-family: "pnpFontMedium", Arial, sans-serif, Helvetica;
+    color: #0181a8;
+    margin: 0;
+    width: 100%;
+    line-height: 24px;
+    margin: 20px auto;
+    width: 500px;
+}
+.profile .subHeadArea, .profile .subHeadArea_noBorder {
+    width: 510px;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+.profile.claro .dijitButton .dijitButtonNode, .profile.claro .dijitDropDownButton .dijitButtonNode, .profile.claro .dijitComboButton .dijitButtonNode, .profile.claro .dijitToggleButton .dijitButtonNode {
+    color: #ffffff;
+}
+.profile.claro .dijitButton .dijitButtonNode {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px;
+}
+.profile .heading3 {
+    font-size: 12px;
+    font-family: "pnpFontMedium", Arial, sans-serif, Helvetica;
+    color: #003359;
+    margin: 0;
+    width: 100%;
+    font-family: Arial, sans-serif, Helvetica;
+    width: 500px;
+    margin: 0 auto;
+    font-weight: normal;
+    text-align: center;
+    padding: 3px 5px 0 5px;
+    margin-bottom: 3%;
+}
+.profile .pageEndButton {
+    margin: 40px auto 10px auto;
+    padding: 10px 0 0 0;
+    width: 510px;
+    clear: both;
+    display: block;
+    text-align: center;
+}

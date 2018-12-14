@@ -24,6 +24,7 @@ import { Product } from '../model/product.model';
   public user:User;
   public cart:Product[];
   public message:boolean = false;
+  public products:Product[];
 
     constructor(private service:AppService,private router:Router,private sessionService:SessionService){}
     
@@ -77,6 +78,10 @@ getOrder(){
           this.service.myStoreQuantity(this.cart).subscribe((store)=>{
 console.log(store);
           },(error)=>{});
+          this.service.clearCart().subscribe((clear)=>{
+            this.products =clear;
+            this.sessionService.setCart(this.products);
+                },(error)=>{});
         },(error)=>{});
         this.message =true;
         this.paymentForm.reset();

@@ -26,7 +26,7 @@ export class AddCompetitionComponent implements OnInit {
 
     CompetionForm = new FormGroup({
        name: new FormControl('', Validators.required),
-        decription: new FormControl('', Validators.required),
+        description: new FormControl('', Validators.required),
        endDate: new FormControl('', Validators.required),
         photo: new FormControl('', Validators.required),
         banner:new FormControl('', Validators.required),
@@ -47,6 +47,7 @@ export class AddCompetitionComponent implements OnInit {
     let product= this.CompetionForm.get('product').value;
     console.log(product);
 this.products.push(product);
+this.CompetionForm.get('product').reset();
 console.log(this.products);
     }
     saveCompetition() {
@@ -55,6 +56,7 @@ this.competition =aisle;
 this.competition.product =this.products;
 this.service.saveCompetition(this.competition).subscribe((saveRec)=>{
 console.log(this.competition);
+this.message =saveRec.text();
 },(error)=>{});
        
     }

@@ -42,6 +42,7 @@ export class MenuComponent implements OnInit{
     this.getCount();
     this.getBySave();
     this.getCart();
+    this.getUser();
   } 
   constructor(private service:AppService,private router:Router,private sessionService:SessionService){}
   
@@ -53,8 +54,13 @@ export class MenuComponent implements OnInit{
   getBySave(){
     this.service.getBySave().subscribe((getBySave)=>{
       this.products =JSON.parse(getBySave['_body']) ;
+
     })
   }
+  getUser() {
+    this.user = this.sessionService.getUser();
+  }
+
   getAllByCat(aisleId:number){
 
     console.log(aisleId);

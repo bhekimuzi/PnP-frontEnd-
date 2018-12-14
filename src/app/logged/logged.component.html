@@ -365,7 +365,7 @@
 
 
                     <div class="owl-stage-outer">
-                      <div *ngFor="let product of products">
+                      <div *ngFor="let product of (products | slice:0:3)">
 
 
                         <div class="owl-item active" style="width: 250px; margin-right: 10px;">

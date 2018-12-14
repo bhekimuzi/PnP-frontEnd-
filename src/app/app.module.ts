@@ -42,6 +42,7 @@ import { AddCompetitionComponent } from './admin/competition/addCompetition.comp
 import { MyCompetitionComponent } from './competition/myCompetition/myCompetition.component';
 import { ShopComponent } from './menu/shop/shop.component';
 import { DeliveryManComponent } from './deliveryMan/deliveryMan.component';
+import { ResetComponent } from './login/reset/reset.component';
 
 
 
@@ -80,11 +81,12 @@ import { DeliveryManComponent } from './deliveryMan/deliveryMan.component';
     {path:'my-addCompetion', component: AddCompetitionComponent},
     {path:'my-com', component: MyCompetitionComponent},
     {path:'my-shop', component: ShopComponent},
-    {path:'my-deliveryMan', component: DeliveryManComponent}
+    {path:'my-deliveryMan', component: DeliveryManComponent},
+    {path:'my-reset', component: ResetComponent}
     
 
   ]) ],
-declarations: [ AppComponent ,FreshFoodComponent,DeliveryManComponent,ShopComponent,MyCompetitionComponent,AddCompetitionComponent,SupplierComponent,CompetitionComponent, AddRecipeComponent,MyRecipeComponent,RecipesComponent,PaymentComponent,OrderSummaryComponent,TrolleyComponent,DeliveryComponent,FooterComponent, HeaderComponent,MyProductComponent,ProductComponent,AisleComponent, MenuComponent,LoginComponent,CategoryComponent,AdminComponent,RegisterComponent,SigninComponent,RegFormComponent,LoggedComponent ],
+declarations: [ AppComponent ,FreshFoodComponent,ResetComponent,DeliveryManComponent,ShopComponent,MyCompetitionComponent,AddCompetitionComponent,SupplierComponent,CompetitionComponent, AddRecipeComponent,MyRecipeComponent,RecipesComponent,PaymentComponent,OrderSummaryComponent,TrolleyComponent,DeliveryComponent,FooterComponent, HeaderComponent,MyProductComponent,ProductComponent,AisleComponent, MenuComponent,LoginComponent,CategoryComponent,AdminComponent,RegisterComponent,SigninComponent,RegFormComponent,LoggedComponent ],
 providers:[AppService,SessionService],
   bootstrap:[ AppComponent ]
 })

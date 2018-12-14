@@ -13,27 +13,29 @@ import { Router } from '@angular/router';
   })
   
   export class CategoryComponent implements OnInit{
-  ngOnInit() {
-    
-  }
+  
   constructor(private service: AppService,private sessionService:SessionService,private router:Router) { }
 
 
 
-
+public message:string ='';
 CategoryForm =new FormGroup({
   aisleId:new FormControl('',Validators.required),
   categoryName:new FormControl('',Validators.required),
   image:new FormControl('',Validators.required)
 });
 
-
+ngOnInit() {
+    
+}
 saveCategory(){
   let category =this.CategoryForm.value;
   let aisleId =this.CategoryForm.controls['aisleId'].value
   console.log(category);
   this.service.addCategory(aisleId,category).subscribe((MyCategory)=>{
     category = Category;
+    this.message =MyCategory.text();
+    this.CategoryForm.reset();
   },(error)=>{
 
   })

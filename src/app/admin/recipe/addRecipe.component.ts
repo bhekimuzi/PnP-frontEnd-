@@ -48,6 +48,7 @@ export class AddRecipeComponent implements OnInit {
     let product= this.RecipeForm.get('product').value;
     console.log(product);
 this.products.push(product);
+this.RecipeForm.get('product').reset();
 console.log(this.products);
     }
     saveRecipe() {
@@ -56,6 +57,7 @@ this.recipe =aisle;
 this.recipe.product =this.products;
 this.service.saveRecipe(this.recipe).subscribe((saveRec)=>{
 console.log(this.recipe);
+this.message =saveRec.text();
 },(error)=>{});
        
     }

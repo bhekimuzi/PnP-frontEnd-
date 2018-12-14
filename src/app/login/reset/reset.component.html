@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="../style.css">
+<div class="headerLogo">
+        <a routerLink="/my-menu" routerLinkActive="active">
+            <img src="app/menu/img/LogoPnP.png" alt="Pick n Pay" >
+        </a>
+    </div>
+<div id="uniqName_3_0" widgetid="uniqName_3_0">
+    <form data-dojo-attach-point="containerNode" data-dojo-attach-event="onreset:_onReset,onsubmit:_onSubmit" id="dijit_form_Form_0" widgetid="dijit_form_Form_0"
+    [formGroup]="resetForm">
+
+        <h1 class="heading1" style="font-size: 24px;
+        font-weight: normal;
+        font-family:  Arial, sans-serif, Helvetica;
+        color: #0181a8;
+        margin: 0;
+        width: 100%;
+        line-height: 24px;
+        margin: 20px auto;
+        width: 500px">
+            <span>Reset Password</span>
+        </h1>
+
+        <div class="subHeadArea">
+            <h3 class="heading3" style="font-size: 12px;
+            font-family: Arial, sans-serif, Helvetica;
+            color: #003359;
+            margin: 0;
+            width: 100%;
+            font-family: Arial, sans-serif, Helvetica;
+            width: 500px;
+            margin: 0 auto;
+            font-weight: normal;
+            text-align: center;
+            padding: 3px 5px 0 5px;">Please enter your email address and we'll send you a temporary password.</h3>
+        </div>
+
+        <table class="formBlock">
+            <tbody><tr data-dojo-attach-point="emailAddressRow">
+                <td width="230"><label for="uniqName_3_0_emailAddress">Email address/username</label></td>
+                <td width="280"><div class="dijit dijitReset dijitInline dijitLeft dijitTextBox dijitValidationTextBox" id="widget_uniqName_3_0_emailAddress" role="presentation" widgetid="uniqName_3_0_emailAddress"><div class="dijitReset dijitValidationContainer"></div><div class="dijitReset dijitInputField dijitInputContainer">
+                    <input class="dijitReset dijitInputInner" data-dojo-attach-point="textbox,focusNode" autocomplete="off" type="text" tabindex="0" id="uniqName_3_0_emailAddress" value="" formControlName="email"></div></div></td>
+                    
+                </tr>
+                <tr>
+                    <td>
+
+                            <div class="dijitTooltipContainer dijitTooltipContents" style="color:red;" *ngIf="email" data-dojo-attach-point="containerNode" role="alert" align="left"><div style="width: 320px; white-space: normal" class="validationPrompting">{{email}}</div></div>
+                  
+                    </td>
+                          </tr>
+        </tbody></table>
+
+        
+    </form>
+    <div data-dojo-attach-point="successContainer" style="display: none">
+        <h1 class="heading1">
+            We’ve reset your password
+        </h1>
+
+        <div class="subHeadArea">
+            <h3 class="heading3">
+                <span data-dojo-type="" data-dojo-attach-point="resetPasswordDeliveryMessage"></span>
+                Click
+                <a href="#login">here</a> to sign in.</h3>
+        </div>
+    </div>
+</div>
